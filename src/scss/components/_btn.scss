@@ -1,0 +1,57 @@
+.btn {
+  --btn-main-color: var(--dark-text);
+  --btn-secondary-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-shrink: 0;
+  gap: 1rem;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.8rem;
+  letter-spacing: -0.028rem;
+  padding: 0.8rem 1rem;
+  border-radius: 10rem;
+  background-color: var(--btn-main-color);
+  color: var(--btn-secondary-color);
+  transition: background-color 0.2s, color 0.2s;
+
+  &:link,
+  &:visited {
+    color: var(--btn-secondary-color);
+  }
+  svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: currentColor;
+    flex-shrink: 0;
+    position: relative;
+    top: 0.1rem;
+  }
+
+  &--outline {
+    background-color: transparent;
+    border: 1px solid var(--btn-main-color);
+    color: var(--btn-main-color);
+
+    &:link,
+    &:visited {
+      color: var(--btn-main-color);
+    }
+
+    svg {
+      fill: var(--primary-color);
+    }
+  }
+
+  &--white {
+    --btn-main-color: white;
+    --btn-secondary-color: var(--dark-text);
+
+    svg {
+      fill: currentColor;
+    }
+  }
+}
