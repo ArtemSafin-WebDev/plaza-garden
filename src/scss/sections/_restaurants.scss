@@ -423,11 +423,11 @@
     height: 3rem;
   }
 
-  svg,
   img {
     width: 3.6rem;
     height: 3.6rem;
-    fill: white;
+    object-fit: contain;
+
     @include media.breakpoint(laptop) {
       width: 2.4rem;
       height: 2.4rem;
