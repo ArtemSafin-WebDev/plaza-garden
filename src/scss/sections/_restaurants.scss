@@ -1,0 +1,460 @@
+@use "../utils";
+@use "../media";
+
+.restaurants {
+  @include utils.blockWrapper;
+  background: #766b2c;
+  color: white;
+
+  margin-bottom: 16rem;
+
+  @include media.breakpoint(laptop) {
+    margin-bottom: 12rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    margin-bottom: 10rem;
+  }
+  @include media.breakpoint(mobile) {
+    margin-bottom: 8rem;
+  }
+}
+
+.restaurants__content {
+  @include utils.blockContent;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "stack";
+
+  @include media.breakpoint(mobile) {
+    grid-template-areas: revert;
+    padding-top: 1.7rem;
+    padding-bottom: 3.4rem;
+  }
+}
+
+.restaurants__row {
+  min-height: min(108rem, 100vh);
+  grid-area: stack;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas: "left right";
+
+  @include media.breakpoint(laptop) {
+    min-height: min(76.8rem, 100vh);
+  }
+
+  @include media.breakpoint(small-tablet) {
+    min-height: 76.8rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    display: contents;
+  }
+}
+
+.restaurants__left-col {
+  grid-area: left;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 0;
+  gap: 2rem;
+  padding-right: 4rem;
+  position: relative;
+  z-index: 1;
+
+  @include media.breakpoint(laptop) {
+    min-height: min(76.8rem, 100vh);
+    padding-right: 3rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    padding: 3rem 0;
+    padding-right: 0.5rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    display: contents;
+  }
+}
+
+.restaurants__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  @include media.breakpoint(small-tablet) {
+    gap: 0;
+  }
+
+  @include media.breakpoint(mobile) {
+    gap: 1rem;
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    z-index: 7;
+    padding: 2rem;
+    padding-left: 1rem;
+  }
+}
+
+.restaurants__nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  & > svg {
+    display: none;
+
+    @include media.breakpoint(mobile) {
+      flex-shrink: 0;
+      margin-left: auto;
+      fill: white;
+      width: 2.4rem;
+      height: 2.4rem;
+      display: block;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s, visibility 0s linear 0.2s;
+    }
+  }
+
+  &.active {
+    .restaurants__nav-link-tab-btn {
+      color: white;
+    }
+    .restaurants__nav-link-btn {
+      opacity: 1;
+      visibility: inherit;
+      transition: opacity 0.2s, visibility 0.2s, background-color 0.2s,
+        color 0.2s, border-color 0.2s;
+    }
+
+    & > svg {
+      opacity: 1;
+      visibility: inherit;
+      transition: opacity 0.2s, visibility 0.2s;
+    }
+  }
+}
+
+.restaurants__nav-link-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #c6bc83;
+  &:link,
+  &:visited {
+    color: #c6bc83;
+  }
+
+  @include media.breakpoint(mobile) {
+    color: rgba(255, 255, 255, 0.4);
+    &:link,
+    &:visited {
+      color: rgba(255, 255, 255, 0.4);
+    }
+  }
+}
+
+.restaurants__nav-link-tab-btn-icon {
+  width: 3.6rem;
+  height: 3.6rem;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+
+  @include media.breakpoint(laptop) {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  svg {
+    width: 2.2rem;
+    height: 2.2rem;
+    fill: currentColor;
+    flex-shrink: 0;
+
+    @include media.breakpoint(laptop) {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.restaurants__nav-link-btn {
+  margin-left: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0s linear 0.2s, background-color 0.2s,
+    color 0.2s, border-color 0.2s;
+  @include media.breakpoint(mobile) {
+    display: none;
+  }
+}
+
+.restaurants__bottom-wrapper {
+  margin-top: auto;
+  gap: 1.2rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  @include media.breakpoint(small-tablet) {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 2rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    grid-row: 3 / 4;
+    grid-column: 1 / -1;
+
+    justify-content: flex-end;
+  }
+}
+
+.restaurants__left-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+
+  @include media.breakpoint(small-tablet) {
+    display: none;
+  }
+}
+
+.restaurants__left-bg-wrapper {
+  flex-grow: 1;
+  margin-left: calc(-1 * (100vw - 100% * 2) / 2);
+  position: relative;
+  background-image: url("../images/restaurants-pattern.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.restaurants__right-col {
+  display: flex;
+  flex-direction: column;
+
+  @include media.breakpoint(mobile) {
+    display: contents;
+  }
+}
+
+.restaurants__images-slider {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-right: calc(-1 * (100vw - 100% * 2) / 2);
+  position: relative;
+
+  @include media.breakpoint(small-tablet) {
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 88%;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      z-index: 5;
+      pointer-events: none;
+    }
+  }
+
+  @include media.breakpoint(mobile) {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    margin: 0;
+    min-height: 37.8rem;
+
+    &::after {
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.6) 0%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      bottom: auto;
+      top: 0;
+      height: 63%;
+    }
+  }
+}
+
+.restaurants__images-slide {
+  position: absolute;
+  inset: 0;
+}
+
+.restaurants__images-slide-photo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.restaurants__bg-pattern {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.restaurants__card {
+  grid-area: stack;
+  align-self: center;
+  justify-self: center;
+  padding: 2rem;
+  border-radius: 1rem;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  color: var(--dark-text);
+  width: 29.6rem;
+  min-height: 26rem;
+  z-index: 10;
+
+  @include media.breakpoint(laptop) {
+    width: 21.2rem;
+    min-height: 20rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    width: 16.4rem;
+    min-height: 13.8rem;
+    padding: 1rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    align-self: flex-start;
+    transform: translateY(-50%);
+  }
+}
+
+.restaurants__card-slider {
+  display: contents;
+  .swiper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .swiper-wrapper {
+    flex-grow: 1;
+  }
+
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    box-sizing: border-box;
+  }
+}
+
+.restaurants__card-slider-item {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 2rem;
+}
+
+.restaurants__card-title {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.4rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+
+  @include media.breakpoint(laptop) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.8rem;
+    letter-spacing: 0.14rem;
+    text-transform: uppercase;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+  }
+}
+
+.restaurants__card-icon {
+  margin-top: auto;
+  width: 4.8rem;
+  height: 4.8rem;
+  border-radius: 50%;
+  background: #4e1c54;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+
+  @include media.breakpoint(laptop) {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  svg,
+  img {
+    width: 3.6rem;
+    height: 3.6rem;
+    fill: white;
+    @include media.breakpoint(laptop) {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+
+    @include media.breakpoint(small-tablet) {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+}
+
+.restaurants__all-link {
+  @include media.breakpoint(laptop) {
+    margin-bottom: 3rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    margin: 0;
+  }
+
+  @include media.breakpoint(mobile) {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.4rem;
+    letter-spacing: -0.024rem;
+    padding: 0.6rem 0.8rem;
+  }
+}
