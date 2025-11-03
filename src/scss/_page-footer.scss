@@ -199,6 +199,12 @@
   &:visited {
     color: var(--grey-text);
   }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: var(--dark-text);
+    }
+  }
 }
 
 .page-footer__third-row {
@@ -285,6 +291,12 @@
     width: 1rem;
     height: 1rem;
     flex-shrink: 0;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: var(--dark-text);
+    }
   }
 
   @include media.breakpoint(small-tablet) {
@@ -490,6 +502,11 @@
   &:link,
   &:visited {
     color: var(--grey-text);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: var(--dark-text);
+    }
   }
 
   @include media.breakpoint(small-tablet) {

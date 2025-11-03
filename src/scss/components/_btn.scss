@@ -44,6 +44,13 @@
     svg {
       fill: var(--primary-color);
     }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: var(--btn-main-color);
+        color: var(--btn-secondary-color);
+      }
+    }
   }
 
   &--white {

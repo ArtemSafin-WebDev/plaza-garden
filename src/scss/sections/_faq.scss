@@ -43,6 +43,7 @@
   margin-bottom: 6rem;
   max-width: 153.2rem;
   align-self: center;
+  width: 100%;
 
   @include media.breakpoint(laptop) {
     margin-bottom: 4rem;
@@ -75,6 +76,12 @@
     transition: transform 0.2s;
   }
 
+  .faq__accordion.active & {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
   @include media.breakpoint(laptop) {
     padding: 2rem 0;
   }
@@ -96,6 +103,10 @@
   display: grid;
   grid-template-rows: 0fr;
   transition: grid-template-rows 500ms;
+
+  .faq__accordion.active & {
+    grid-template-rows: 1fr;
+  }
 }
 
 .faq__accordion-dropdown-inner {
@@ -110,6 +121,9 @@
   line-height: 2.8rem;
   letter-spacing: -0.04rem;
   color: #868f99;
+  // max-width: 80rem;
+
+  max-width: 80rem;
 
   @include media.breakpoint(laptop) {
     font-size: 1.6rem;

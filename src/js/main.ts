@@ -5,6 +5,7 @@ import special from "./special";
 import events from "./events";
 import blocks from "./blocks";
 import living from "./living";
+import faq from "./faq";
 
 document.addEventListener("DOMContentLoaded", () => {
   infrastructure();
@@ -12,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   events();
   blocks();
   living();
+  faq();
 });
 
 window.addEventListener("load", () => {

@@ -71,6 +71,7 @@
     background: var(--primary-color);
     border-color: var(--primary-color);
     color: white;
+    cursor: default;
   }
 
   @include media.breakpoint(laptop) {
@@ -112,6 +113,7 @@
 
 .blocks__top-tabs {
   margin-top: 3rem;
+  position: relative;
   @include media.breakpoint(small-tablet) {
     margin: 0;
     order: -20;
@@ -176,6 +178,7 @@
 }
 
 .blocks__bottom-tabs {
+  position: relative;
   margin-top: 3.2rem;
 
   @include media.breakpoint(laptop) {
@@ -221,6 +224,56 @@
     @include media.breakpoint(mobile) {
       width: 100%;
       margin-right: 0.8rem;
+    }
+  }
+}
+
+.blocks__gradients {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+
+  z-index: 2;
+
+  display: flex;
+  justify-content: space-between;
+
+  &::before,
+  &::after {
+    content: "";
+    width: 26.6%;
+    height: 100%;
+    transition: opacity 0.4s;
+  }
+
+  &::after {
+    background: linear-gradient(
+      to left,
+      #e7e7e9 0%,
+      rgba(231, 231, 233, 0) 100%
+    );
+  }
+  &::before {
+    background: linear-gradient(
+      to right,
+      #e7e7e9 0%,
+      rgba(231, 231, 233, 0) 100%
+    );
+  }
+
+  .is-beginning & {
+    &::before {
+      opacity: 0;
+    }
+  }
+
+  .is-end & {
+    &::after {
+      opacity: 0;
     }
   }
 }
@@ -364,5 +417,26 @@
   }
   @include media.breakpoint(mobile) {
     display: none;
+  }
+}
+
+.blocks__bottom-tab,
+.blocks__top-tabs-item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s, visibility 0s linear 0.4s;
+  z-index: 5;
+
+  &.active {
+    opacity: 1;
+    visibility: inherit;
+    transition: opacity 0.4s, visibility 0.4s;
+    z-index: 10;
+    position: relative;
   }
 }
