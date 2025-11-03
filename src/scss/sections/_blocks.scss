@@ -284,6 +284,14 @@
   grid-template-columns: minmax(0, 1fr);
   grid-template-areas: "stack";
 
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      .blocks__slider-card-image {
+        transform: scale(1.02);
+      }
+    }
+  }
+
   &::before {
     content: "";
     display: block;
@@ -300,6 +308,7 @@
   position: relative;
   border-radius: 1rem;
   overflow: hidden;
+  backface-visibility: hidden;
 }
 
 .blocks__slider-card-image {
@@ -309,6 +318,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.4s;
 }
 
 .blocks__slider-card-content {
@@ -404,6 +414,15 @@
     @include media.breakpoint(laptop) {
       width: 2.4rem;
       height: 2.4rem;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:not(.swiper-button-disabled):hover {
+      background-color: white;
+      svg {
+        fill: var(--primary-color);
+      }
     }
   }
 

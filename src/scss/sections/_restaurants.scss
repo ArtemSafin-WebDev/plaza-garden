@@ -441,14 +441,6 @@
 }
 
 .restaurants__all-link {
-  @include media.breakpoint(laptop) {
-    margin-bottom: 3rem;
-  }
-
-  @include media.breakpoint(small-tablet) {
-    margin: 0;
-  }
-
   @include media.breakpoint(mobile) {
     font-size: 1.2rem;
     font-style: normal;

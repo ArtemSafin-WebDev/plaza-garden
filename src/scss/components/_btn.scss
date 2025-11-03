@@ -1,6 +1,5 @@
 .btn {
-  --btn-main-color: var(--dark-text);
-  --btn-secondary-color: white;
+  background-color: var(--dark-text);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,13 +13,13 @@
   letter-spacing: -0.028rem;
   padding: 0.8rem 1rem;
   border-radius: 10rem;
-  background-color: var(--btn-main-color);
-  color: var(--btn-secondary-color);
+
+  color: white;
   transition: background-color 0.2s, color 0.2s;
 
   &:link,
   &:visited {
-    color: var(--btn-secondary-color);
+    color: white;
   }
   svg {
     width: 1.2rem;
@@ -33,12 +32,12 @@
 
   &--outline {
     background-color: transparent;
-    border: 1px solid var(--btn-main-color);
-    color: var(--btn-main-color);
+    border: 1px solid var(--dark-text);
+    color: var(--dark-text);
 
     &:link,
     &:visited {
-      color: var(--btn-main-color);
+      color: var(--dark-text);
     }
 
     svg {
@@ -47,15 +46,45 @@
 
     @media (hover: hover) and (pointer: fine) {
       &:hover {
-        background-color: var(--btn-main-color);
-        color: var(--btn-secondary-color);
+        background-color: var(--dark-text);
+        color: white;
       }
     }
   }
 
   &--white {
-    --btn-main-color: white;
-    --btn-secondary-color: var(--dark-text);
+    background-color: white;
+    color: var(--dark-text);
+
+    &:link,
+    &:visited {
+      color: var(--dark-text);
+    }
+
+    svg {
+      fill: currentColor;
+    }
+
+    &.btn--outline {
+      background-color: transparent;
+      color: white;
+      border: 1px solid white;
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          background-color: white;
+          color: var(--dark-text);
+        }
+      }
+    }
+  }
+
+  &--brown {
+    background-color: var(--primary-color);
+    color: white;
+    &:link,
+    &:visited {
+      color: white;
+    }
 
     svg {
       fill: currentColor;

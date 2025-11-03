@@ -206,6 +206,7 @@
   background-color: white;
   z-index: 5;
   border-radius: 50%;
+  transition: opacity 0.2s, background-color 0.2s;
 
   @include media.breakpoint(laptop) {
     width: 4.4rem;
@@ -240,6 +241,15 @@
     @include media.breakpoint(mobile) {
       width: 1.6rem;
       height: 1.6rem;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:not(.swiper-button-disabled):hover {
+      background-color: var(--primary-color);
+      svg {
+        fill: white;
+      }
     }
   }
 }
