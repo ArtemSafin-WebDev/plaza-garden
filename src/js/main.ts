@@ -7,6 +7,7 @@ import blocks from "./blocks";
 import living from "./living";
 import faq from "./faq";
 import about from "./about";
+import block from "./block";
 
 document.addEventListener("DOMContentLoaded", () => {
   infrastructure();
@@ -16,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   living();
   faq();
   about();
+  block();
 });
 
 window.addEventListener("load", () => {
