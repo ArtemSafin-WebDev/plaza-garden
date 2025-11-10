@@ -74,9 +74,11 @@
     width: 3.6rem;
     height: 3.6rem;
     transition: transform 0.2s;
+    fill: currentColor;
   }
 
   .faq__accordion.active & {
+    color: var(--primary-color);
     svg {
       transform: rotate(180deg);
     }
@@ -123,7 +125,7 @@
   color: #868f99;
   // max-width: 80rem;
 
-  max-width: 80rem;
+  max-width: none;
 
   @include media.breakpoint(laptop) {
     font-size: 1.6rem;

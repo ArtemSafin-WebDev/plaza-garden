@@ -56,67 +56,9 @@
             Plaza Garden<br> Moscow WTC
         </h1>
         <div class="intro__bottom-row">
-            <form action="/" class="intro__form">
-                <div class="intro__form-fields">
-                    <div class="intro__form-field">
-                        <button class="intro__form-select-btn" type="button">
-                            <span class="intro__form-select-btn-content">
-                                <span class="intro__form-select-btn-label">
-                                    Заезд
-                                </span>
-                                <span class="intro__form-select-btn-value">
-                                    01.05.25
-                                </span>
-                            </span>
-                            <svg width="12" height="12" aria-hidden="true">
-                                <use xlink:href="#select-arrow"></use>
-                            </svg>
-                            <svg width="12" height="12" aria-hidden="true">
-                                <use xlink:href="#select-arrow-stylized"></use>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="intro__form-field">
-                        <button class="intro__form-select-btn" type="button">
-                            <span class="intro__form-select-btn-content">
-                                <span class="intro__form-select-btn-label">
-                                    выезд
-                                </span>
-                                <span class="intro__form-select-btn-value">
-                                    10.05.25
-                                </span>
-                            </span>
-                            <svg width="12" height="12" aria-hidden="true">
-                                <use xlink:href="#select-arrow"></use>
-                            </svg>
-                            <svg width="12" height="12" aria-hidden="true">
-                                <use xlink:href="#select-arrow-stylized"></use>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="intro__form-field intro__form-field--fullwidth">
-                        <button class="intro__form-select-btn" type="button">
-                            <span class="intro__form-select-btn-content">
-                                <span class="intro__form-select-btn-label">
-                                    Гости
-                                </span>
-                                <span class="intro__form-select-btn-value">
-                                    2 взрослых, 1 ребенок
-                                </span>
-                            </span>
-                            <svg width="12" height="12" aria-hidden="true">
-                                <use xlink:href="#select-arrow"></use>
-                            </svg>
-                            <svg width="12" height="12" aria-hidden="true">
-                                <use xlink:href="#select-arrow-stylized"></use>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                <button class="intro__form-submit" type="submit">
-                    Забронировать
-                </button>
-            </form>
+            <div class="intro__form">
+                {{> booking-form }}
+            </div>
             <a href="#" class="intro__video">
                 <img src="/images/intro-video.webp" alt="" class="intro__video-preview">
                 <svg width="12" height="12" aria-hidden="true">

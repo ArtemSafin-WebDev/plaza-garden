@@ -1,0 +1,94 @@
+@use "../utils";
+@use "../media";
+
+.room-card {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "stack";
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      .room-card__image {
+        transform: scale(1.02);
+      }
+    }
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: 73.17%;
+    grid-area: stack;
+    @include media.breakpoint(small-tablet) {
+      padding-bottom: 100%;
+    }
+  }
+}
+
+.room-card__image-container {
+  grid-area: stack;
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+
+.room-card__image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.room-card__content {
+  grid-area: stack;
+  align-self: flex-end;
+  margin: 1rem;
+  z-index: 5;
+  border-radius: 1rem;
+  background: white;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+  color: var(--dark-text);
+
+  svg {
+    flex-shrink: 0;
+    fill: #4e1c54;
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+}
+
+.room-card__title {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.16rem;
+  text-transform: uppercase;
+
+  @include media.breakpoint(laptop) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.14rem;
+    text-transform: uppercase;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: 0.12rem;
+    text-transform: uppercase;
+  }
+}

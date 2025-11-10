@@ -1,0 +1,43 @@
+<section class="room-intro">
+    <div class="room-intro__bg">
+        <picture>
+            <source srcset="/images/room-intro/mobile.webp" media="(max-width: 576px)">
+            <source srcset="/images/room-intro/tablet.webp" media="(max-width: 768px)">
+            <source srcset="/images/room-intro/laptop.webp" media="(max-width: 1500px)">
+            <img src="/images/room-intro/desktop.webp" alt="" class="room-intro__bg-image">
+        </picture>
+        <span class="room-intro__bg-mobile-gradient-one">
+
+        </span>
+        <span class="room-intro__bg-mobile-gradient-two">
+
+        </span>
+    </div>
+    <div class="room-intro__content">
+        <div class="room-intro__breadcrumbs">
+            <a href="#">
+                Главная
+            </a>
+            <span class="room-intro__breadcrumbs-divider">
+                /
+            </span>
+            <a href="#" class="hide-on-tablet">
+                Проживание
+            </a>
+            <span class="room-intro__breadcrumbs-divider hide-on-tablet">
+                /
+            </span>
+            <a href="#" class="active">
+                Президентский люкс
+            </a>
+        </div>
+        <h1 class="h1 room-intro__heading">
+            Президентский люкс
+        </h1>
+        <div class="room-intro__bottom-row">
+            <div class="room-intro__form">
+                {{> booking-form }}
+            </div>
+        </div>
+    </div>
+</section>

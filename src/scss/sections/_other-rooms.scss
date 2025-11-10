@@ -1,0 +1,74 @@
+@use "../utils";
+@use "../media";
+
+.other-rooms {
+  @include utils.blockWrapper;
+  margin-bottom: 4rem;
+  @include media.breakpoint(laptop) {
+    margin-bottom: 2rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    margin-bottom: 4rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    margin-bottom: 5.2rem;
+  }
+}
+
+.other-rooms__content {
+  @include utils.blockContent;
+  display: flex;
+  flex-direction: column;
+}
+
+.other-rooms__heading {
+  margin-bottom: 4rem;
+  text-indent: 30rem;
+  b {
+    color: #4e1c54;
+    font-weight: inherit;
+  }
+
+  @include media.breakpoint(laptop) {
+    margin-bottom: 2rem;
+    text-indent: 24rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    margin-bottom: 3rem;
+    text-indent: 13rem;
+    b {
+      color: var(--primary-color);
+    }
+  }
+
+  @include media.breakpoint(mobile) {
+    margin-bottom: 2.4rem;
+    text-indent: 0;
+
+    b {
+      color: #4e1c54;
+    }
+  }
+}
+
+.other-rooms__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 1.2rem;
+
+  @include media.breakpoint(laptop) {
+    grid-gap: 1rem;
+  }
+  @include media.breakpoint(mobile) {
+    grid-template-columns: minmax(0, 1fr);
+    grid-gap: 0.8rem;
+  }
+}
+
+.other-rooms__list-item {
+  display: flex;
+  flex-direction: column;
+}

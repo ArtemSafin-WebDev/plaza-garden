@@ -5,6 +5,9 @@
 @use "page-footer";
 @use "page-header";
 @use "components/btn";
+@use "components/menu";
+@use "components/room-card";
+@use "components/booking-form";
 @use "sections/infrastructure";
 @use "sections/faq";
 @use "sections/special";
@@ -16,3 +19,6 @@
 @use "sections/intro";
 @use "sections/about";
 @use "sections/block";
+@use "sections/other-rooms";
+@use "sections/in-room";
+@use "sections/room-intro";

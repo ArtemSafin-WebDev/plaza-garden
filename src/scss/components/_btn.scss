@@ -1,3 +1,6 @@
+@use "../utils";
+@use "../media";
+
 .btn {
   background-color: var(--dark-text);
   display: flex;
@@ -81,6 +84,10 @@
   &--brown {
     background-color: var(--primary-color);
     color: white;
+
+    &:not(:has(svg)) {
+      padding: 1rem 1.4rem;
+    }
     &:link,
     &:visited {
       color: white;
@@ -88,6 +95,16 @@
 
     svg {
       fill: currentColor;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: var(--primary-color-hover);
+      }
+    }
+
+    @include media.breakpoint(laptop) {
+      padding: 0.8rem 1rem;
     }
   }
 }

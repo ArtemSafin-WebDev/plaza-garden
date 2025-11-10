@@ -150,6 +150,13 @@
   padding: 1.6rem;
   right: 72.5%;
   top: 32%;
+  transition: background-color 0.2s, border-color 0.2s;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: white;
+    }
+  }
 
   @include media.breakpoint(small-tablet) {
     border: 1px solid #868f99;
@@ -304,6 +311,13 @@
   padding: 1.6rem;
   left: 81.1%;
   top: 61%;
+  transition: background-color 0.2s, border-color 0.2s;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: white;
+    }
+  }
 
   @include media.breakpoint(laptop) {
     top: 45%;

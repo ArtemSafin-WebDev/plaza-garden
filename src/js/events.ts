@@ -12,6 +12,14 @@ export default function events() {
     const container = element.querySelector<HTMLElement>(".swiper");
     if (!container) return;
 
+    const slides = Array.from(
+      element.querySelectorAll<HTMLElement>(".swiper-slide")
+    );
+    const wrapper = element.querySelector<HTMLElement>(".swiper-wrapper");
+    slides.forEach((slide) => {
+      wrapper?.appendChild(slide.cloneNode(true));
+    });
+
     new Swiper(container, {
       slidesPerView: "auto",
       speed: 600,

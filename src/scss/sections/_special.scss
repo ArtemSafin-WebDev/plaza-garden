@@ -5,12 +5,29 @@
   @include utils.blockWrapper;
   margin-bottom: 12rem;
 
+  &:has(+ .other-rooms) {
+    margin-bottom: 16rem;
+  }
+
+  @include media.breakpoint(laptop) {
+    &:has(+ .other-rooms) {
+      margin-bottom: 12rem;
+    }
+  }
+
   @include media.breakpoint(small-tablet) {
     margin-bottom: 10rem;
+
+    &:has(+ .other-rooms) {
+      margin-bottom: 10rem;
+    }
   }
 
   @include media.breakpoint(mobile) {
     margin-bottom: 6rem;
+    &:has(+ .other-rooms) {
+      margin-bottom: 8rem;
+    }
   }
 }
 
@@ -33,10 +50,14 @@
 }
 
 .special__heading {
-  text-indent: 22rem;
+  text-indent: 30rem;
+
+  @include media.breakpoint(laptop) {
+    text-indent: 24rem;
+  }
 
   @include media.breakpoint(small-tablet) {
-    text-indent: 14rem;
+    text-indent: 13rem;
   }
 
   @include media.breakpoint(mobile) {
