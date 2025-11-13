@@ -11,6 +11,8 @@ import block from "./block";
 import menu from "./menu";
 import modals from "./modals";
 import services from "./services";
+import otherRestaurants from "./other-restaurants";
+import restaurantGallery from "./restaurant-gallery";
 
 document.addEventListener("DOMContentLoaded", () => {
   menu();
@@ -24,6 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
   block();
   modals();
   services();
+  otherRestaurants();
+  restaurantGallery();
 });
 
 window.addEventListener("load", () => {

@@ -1,0 +1,105 @@
+@use "../utils";
+@use "../media";
+
+.restaurants-catalog {
+  @include utils.blockWrapper;
+  padding-top: 13rem;
+  margin-bottom: 6rem;
+
+  @include media.breakpoint(laptop) {
+    padding-top: 12.4rem;
+    margin-bottom: 2rem;
+  }
+  @include media.breakpoint(small-tablet) {
+    padding-top: 9.4rem;
+    margin-bottom: 8rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    margin-bottom: 5.2rem;
+  }
+}
+
+.restaurants-catalog__content {
+  @include utils.blockContent;
+  display: flex;
+  flex-direction: column;
+}
+
+.restaurants-catalog__breadcrumbs {
+  margin-bottom: 4rem;
+  align-self: center;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.8rem;
+  letter-spacing: -0.028rem;
+  color: var(--grey-text);
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.7rem;
+
+  a {
+    &.active {
+      cursor: default;
+      pointer-events: none;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:not(.active):hover {
+        color: var(--dark-text);
+      }
+    }
+  }
+  @include media.breakpoint(laptop) {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.8rem;
+    letter-spacing: -0.024rem;
+    margin-bottom: 4rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    margin-bottom: 3rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    margin-bottom: 3rem;
+  }
+}
+
+.restaurants-catalog__heading {
+  text-align: center;
+  margin-bottom: 4rem;
+
+  @include media.breakpoint(small-tablet) {
+    margin-bottom: 3rem;
+  }
+}
+
+.restaurants-catalog__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 1.2rem;
+
+  @include media.breakpoint(laptop) {
+    grid-gap: 1rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    grid-row-gap: 3.5rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+}
+
+.restaurants-catalog__list-item {
+  display: flex;
+  flex-direction: column;
+}

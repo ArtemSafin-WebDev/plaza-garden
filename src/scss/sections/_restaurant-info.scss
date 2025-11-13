@@ -1,0 +1,164 @@
+@use "../utils";
+@use "../media";
+
+.restaurant-info {
+  @include utils.blockWrapper;
+  margin-bottom: 12rem;
+
+  @include media.breakpoint(laptop) {
+    margin-bottom: 13.2rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    margin-bottom: 4rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    margin-bottom: 2rem;
+  }
+}
+
+.restaurant-info__content {
+  @include utils.blockContent;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-gap: 1.2rem;
+
+  @include media.breakpoint(laptop) {
+    grid-gap: 1rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.restaurant-info__wrapper {
+  grid-column: 3 / 11;
+  display: flex;
+  flex-direction: column;
+}
+
+.restaurant-info__heading {
+  text-wrap: balance;
+}
+
+.restaurant-info__text {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.8rem;
+  letter-spacing: -0.04rem;
+  color: var(--grey-text);
+  margin-top: 3rem;
+  p {
+    margin-bottom: 3rem;
+    @include media.breakpoint(small-tablet) {
+      margin-bottom: 2rem;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @include media.breakpoint(laptop) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2.2rem;
+    letter-spacing: -0.032rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem;
+    letter-spacing: -0.028rem;
+    margin-top: 2rem;
+  }
+}
+
+.restaurant-info__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 1rem;
+  grid-auto-rows: minmax(18rem, 1fr);
+  margin-top: 3rem;
+
+  @include media.breakpoint(laptop) {
+    grid-gap: 1rem;
+    grid-auto-rows: minmax(12rem, 1fr);
+  }
+
+  @include media.breakpoint(small-tablet) {
+    margin-top: 2rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.restaurant-info__list-item {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.restaurant-info__card {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  border-radius: 1rem;
+  background: white;
+  color: var(--dark-text);
+  gap: 1.2rem;
+  padding: 2rem;
+}
+
+.restaurant-info__card-title {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.4rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+
+  @include media.breakpoint(laptop) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.8rem;
+    letter-spacing: 0.14rem;
+    text-transform: uppercase;
+  }
+}
+
+.restaurant-info__card-link {
+  display: block;
+  text-align: center;
+  align-self: flex-start;
+  margin-top: auto;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.6rem;
+  letter-spacing: -0.028rem;
+  color: white;
+  border-radius: 100rem;
+  background-color: var(--primary-color);
+  transition: background-color 0.2s, color 0.2s;
+  padding: 0.8rem 1rem;
+  &:link,
+  &:visited {
+    color: white;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: var(--primary-color-hover);
+    }
+  }
+}

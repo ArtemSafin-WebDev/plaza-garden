@@ -1,0 +1,167 @@
+@use "../utils";
+@use "../media";
+
+.restaurant-intro {
+  @include utils.blockWrapper;
+  padding-top: 13rem;
+
+  @include media.breakpoint(laptop) {
+    padding-top: 12.4rem;
+  }
+  @include media.breakpoint(small-tablet) {
+    padding-top: 9.4rem;
+  }
+}
+
+.restaurant-intro__content {
+  @include utils.blockContent;
+  display: flex;
+  flex-direction: column;
+}
+
+.restaurant-intro__breadcrumbs {
+  margin-bottom: 4rem;
+  align-self: center;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.8rem;
+  letter-spacing: -0.028rem;
+  color: var(--grey-text);
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.7rem;
+
+  a {
+    &.active {
+      cursor: default;
+      pointer-events: none;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:not(.active):hover {
+        color: var(--dark-text);
+      }
+    }
+  }
+  @include media.breakpoint(laptop) {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.8rem;
+    letter-spacing: -0.024rem;
+    margin-bottom: 4rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    margin-bottom: 3rem;
+  }
+}
+
+.restaurant-intro__heading {
+  margin-bottom: 6rem;
+  text-align: center;
+  @include media.breakpoint(laptop) {
+    margin-bottom: 4rem;
+  }
+}
+
+.restaurant-intro__stack {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "stack";
+}
+
+.restaurant-intro__image-container {
+  grid-area: stack;
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: 56.25%;
+
+    @include media.breakpoint(small-tablet) {
+      padding-bottom: 71.6%;
+    }
+    @include media.breakpoint(mobile) {
+      padding-bottom: 166.6%;
+    }
+  }
+}
+
+.restaurant-intro__image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.restaurant-intro__schedule {
+  grid-area: stack;
+  z-index: 5;
+  width: 27rem;
+  min-height: 20rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(25px);
+  color: white;
+  margin-top: 32.7rem;
+  margin-right: 38.9rem;
+  justify-self: flex-end;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.8rem;
+  letter-spacing: 0.14rem;
+  text-transform: uppercase;
+  align-self: flex-start;
+
+  svg {
+    fill: currentColor;
+    position: absolute;
+    left: 100%;
+    top: 100%;
+    width: 1.8rem;
+    height: 1.8rem;
+    margin-top: 0.4rem;
+  }
+  p {
+    margin-bottom: 1rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @include media.breakpoint(laptop) {
+    margin-top: 19.7rem;
+    margin-right: 23.9rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    width: 20.2rem;
+    min-height: 13.8rem;
+    padding: 1rem;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    margin-top: 13.6rem;
+    margin-right: 13.7rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    margin-bottom: 3rem;
+    margin-top: 17.5rem;
+    margin-right: 4.4rem;
+  }
+}

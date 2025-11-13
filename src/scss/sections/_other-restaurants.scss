@@ -1,0 +1,60 @@
+@use "../utils";
+@use "../media";
+
+.other-restaurants {
+  @include utils.blockWrapper;
+  margin-bottom: 22.3rem;
+  @include media.breakpoint(laptop) {
+    margin-bottom: 2rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    margin-bottom: 4rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    margin-bottom: 5.6rem;
+  }
+}
+
+.other-restaurants__content {
+  @include utils.blockContent;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  @include media.breakpoint(small-tablet) {
+    gap: 2rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    gap: 2.5rem;
+  }
+}
+
+.other-restaurants__slider {
+  .swiper {
+    overflow: visible;
+  }
+
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    box-sizing: border-box;
+    width: calc(50% - 1.2rem * 1 / 2);
+    margin-right: 1.2rem;
+    &:last-child {
+      margin-right: 0;
+    }
+    @include media.breakpoint(laptop) {
+      margin-right: 1rem;
+      width: calc(50% - 1rem * 1 / 2);
+    }
+
+    @include media.breakpoint(mobile) {
+      width: 100%;
+      margin-right: 0.8rem;
+    }
+  }
+}

@@ -1,0 +1,165 @@
+@use "../utils";
+@use "../media";
+
+.restaurant-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "stack";
+  border-radius: 1rem;
+  overflow: hidden;
+  color: white;
+
+  &:link,
+  &:visited {
+    color: white;
+  }
+  &::before {
+    content: "";
+    display: block;
+    grid-area: stack;
+    padding-bottom: 112.4%;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      .restaurant-card__image {
+        transform: scale(1.02);
+      }
+    }
+  }
+
+  @include media.breakpoint(small-tablet) {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow: visible;
+    border-radius: 0;
+    color: var(--dark-text);
+    &:link,
+    &:visited {
+      color: var(--dark-text);
+    }
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.restaurant-card__image-wrapper {
+  grid-area: stack;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    aspect-ratio: 914 / 400;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+
+    @include media.breakpoint(laptop) {
+      aspect-ratio: 658 / 400;
+    }
+    @include media.breakpoint(small-tablet) {
+      display: none;
+    }
+  }
+
+  @include media.breakpoint(small-tablet) {
+    width: 100%;
+    aspect-ratio: 355 / 400;
+    overflow: hidden;
+    border-radius: 1rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    aspect-ratio: 336 / 378;
+  }
+}
+
+.restaurant-card__image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.restaurant-card__content {
+  grid-area: stack;
+  z-index: 5;
+  align-self: flex-end;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+
+  @include media.breakpoint(small-tablet) {
+    padding: 0;
+    align-self: stretch;
+  }
+}
+
+.restaurant-card__title {
+  margin-bottom: 1rem;
+}
+
+.restaurant-card__text {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.8rem;
+  letter-spacing: -0.04rem;
+  margin-bottom: 2rem;
+
+  @include media.breakpoint(laptop) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2.2rem;
+    letter-spacing: -0.032rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem;
+    letter-spacing: -0.028rem;
+    color: var(--grey-text);
+  }
+}
+
+.restaurant-card__link.restaurant-card__link {
+  align-self: flex-start;
+
+  @include media.breakpoint(small-tablet) {
+    border-color: var(--dark-text);
+    color: var(--dark-text);
+
+    &:link,
+    &:visited {
+      color: var(--dark-text);
+    }
+
+    svg {
+      fill: var(--primary-color);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: white;
+        background-color: var(--dark-text);
+        svg {
+          fill: white;
+        }
+      }
+    }
+  }
+}

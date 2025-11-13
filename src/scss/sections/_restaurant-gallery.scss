@@ -1,0 +1,149 @@
+@use "../utils";
+@use "../media";
+
+.restaurant-gallery {
+  @include utils.blockWrapper;
+  margin-bottom: 16rem;
+
+  @include media.breakpoint(laptop) {
+    margin-bottom: 12rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    margin-bottom: 10rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    margin-bottom: 8rem;
+  }
+}
+
+.restaurant-gallery__content {
+  @include utils.blockContent;
+  display: flex;
+  flex-direction: column;
+}
+
+.restaurant-gallery__slider {
+  position: relative;
+  z-index: 20;
+}
+
+.restaurant-gallery__slider-wrapper {
+  grid-area: stack;
+  position: relative;
+
+  .swiper {
+    overflow: visible;
+  }
+
+  .swiper-wrapper {
+    position: relative;
+    left: 15.4%;
+    @include media.breakpoint(small-tablet) {
+      left: 20%;
+    }
+    @include media.breakpoint(mobile) {
+      left: 38%;
+    }
+  }
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    box-sizing: border-box;
+    margin: 0 0.6rem;
+    width: 53rem;
+    width: 30%;
+
+    @include media.breakpoint(small-tablet) {
+      margin: 0 0.5rem;
+      width: 38.88%;
+    }
+
+    @include media.breakpoint(mobile) {
+      width: 73.8%;
+    }
+  }
+}
+
+.restaurant-gallery__slider-arrow {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4.8rem;
+  height: 4.8rem;
+  background-color: white;
+  z-index: 5;
+  border-radius: 50%;
+  transition: opacity 0.2s, background-color 0.2s;
+
+  @include media.breakpoint(laptop) {
+    width: 4.4rem;
+    height: 4.4rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  &--prev {
+    left: 0;
+  }
+
+  &--next {
+    right: 0;
+  }
+
+  svg {
+    width: 2.6rem;
+    height: 2.6rem;
+    fill: var(--dark-text);
+    transition: fill 0.2s;
+
+    @include media.breakpoint(laptop) {
+      width: 2.4rem;
+      height: 2.4rem;
+      fill: var(--primary-color);
+    }
+
+    @include media.breakpoint(mobile) {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:not(.swiper-button-disabled):hover {
+      background-color: var(--primary-color);
+      svg {
+        fill: white;
+      }
+    }
+  }
+}
+
+.restaurant-gallery__slider-card {
+  overflow: hidden;
+  aspect-ratio: 530 / 664;
+  width: 100%;
+  position: relative;
+  border-radius: 1rem;
+
+  @include media.breakpoint(small-tablet) {
+    aspect-ratio: 280 / 348;
+  }
+}
+
+.restaurant-gallery__slider-card-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -webkit-user-drag: none;
+}
