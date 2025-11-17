@@ -47,7 +47,7 @@
   @include media.breakpoint(mobile) {
     padding: 1rem;
     padding-top: 6rem;
-    border-radius: 1rem;
+    border-radius: 2rem;
   }
 }
 
@@ -159,4 +159,9 @@
   @include media.breakpoint(mobile) {
     aspect-ratio: 316 / 228;
   }
+}
+
+.restaurant-about__link {
+  margin-top: 4rem;
+  align-self: center;
 }

@@ -13,6 +13,7 @@ import modals from "./modals";
 import services from "./services";
 import otherRestaurants from "./other-restaurants";
 import restaurantGallery from "./restaurant-gallery";
+import otherSpecial from "./other-special";
 
 document.addEventListener("DOMContentLoaded", () => {
   menu();
@@ -28,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   services();
   otherRestaurants();
   restaurantGallery();
+  otherSpecial();
 });
 
 window.addEventListener("load", () => {

@@ -65,6 +65,9 @@
   @include media.breakpoint(laptop) {
     margin-bottom: 4rem;
   }
+  @include media.breakpoint(mobile) {
+    margin-bottom: 3rem;
+  }
 }
 
 .restaurant-intro__stack {

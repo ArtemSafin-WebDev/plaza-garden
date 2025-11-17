@@ -1,0 +1,153 @@
+@use "../utils";
+@use "../media";
+
+.special-info {
+  @include utils.blockWrapper;
+  margin-bottom: 16rem;
+
+  @include media.breakpoint(laptop) {
+    margin-bottom: 12rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    margin-bottom: 10rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    margin-bottom: 3rem;
+  }
+}
+
+.special-info__content {
+  @include utils.blockContent;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-gap: 1.2rem;
+
+  @include media.breakpoint(laptop) {
+    grid-gap: 1rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.special-info__wrapper {
+  grid-column: 3 / 11;
+  display: flex;
+  flex-direction: column;
+}
+
+.special-info__heading {
+  text-wrap: balance;
+  font-size: 6.8rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 7rem;
+  letter-spacing: -0.408rem;
+  font-family: var(--tt-ramillas);
+  margin-bottom: 3rem;
+
+  b {
+    font-weight: inherit;
+    color: var(--primary-color);
+  }
+
+  @include media.breakpoint(laptop) {
+    font-size: 5.4rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 5.4rem;
+    letter-spacing: -0.324rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 3.2rem;
+    letter-spacing: -0.192rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    font-size: 2.8rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 3.2rem;
+    letter-spacing: -0.168rem;
+  }
+}
+
+.special-info__list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 6rem;
+
+  @include media.breakpoint(small-tablet) {
+    margin-bottom: 4rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    margin-bottom: 3rem;
+    gap: 1rem;
+  }
+}
+
+.special-info__list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.6rem;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.8rem;
+  letter-spacing: -0.04rem;
+  color: var(--grey-text);
+  svg {
+    width: 2.4rem;
+    height: 2.4rem;
+    flex-shrink: 0;
+    fill: #4e1c54;
+    position: relative;
+    top: -0.15rem;
+  }
+
+  @include media.breakpoint(laptop) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2.2rem;
+    letter-spacing: -0.032rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem;
+    letter-spacing: -0.028rem;
+    gap: 1.6rem;
+  }
+}
+
+.special-info__remark {
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.8rem;
+  letter-spacing: 0.14rem;
+  text-transform: uppercase;
+  font-family: var(--manrope);
+
+  @include media.breakpoint(mobile) {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.4rem;
+    letter-spacing: 0.12rem;
+    text-transform: uppercase;
+  }
+}
