@@ -8,6 +8,7 @@ import services from "./pages-data/services";
 import special from "./pages-data/special";
 import specialDetail from "./pages-data/special-detail";
 import events from "./pages-data/events";
+import hall from "./pages-data/hall";
 
 const pagesConfig = {
   ...home,
@@ -20,6 +21,7 @@ const pagesConfig = {
   ...special,
   ...specialDetail,
   ...events,
+  ...hall,
 };
 
 export default pagesConfig;

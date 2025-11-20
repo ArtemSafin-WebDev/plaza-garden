@@ -313,3 +313,106 @@
     display: none;
   }
 }
+
+.restaurant-intro__hall-cards {
+  display: contents;
+}
+
+.restaurant-intro__hall-card {
+  grid-area: stack;
+  z-index: 5;
+  width: 27rem;
+  min-height: 15.7rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  border-radius: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(25px);
+  color: white;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  & > svg {
+    width: 1.8rem;
+    height: 1.8rem;
+    position: absolute;
+    fill: white;
+  }
+
+  &:nth-child(1) {
+    align-self: flex-start;
+    justify-self: flex-start;
+    margin-top: 44.3rem;
+    margin-left: 46.9rem;
+    @include media.breakpoint(laptop) {
+      margin-top: 29.6rem;
+      margin-left: 24.2rem;
+    }
+
+    @include media.breakpoint(small-tablet) {
+      align-self: flex-end;
+      margin: 0;
+      margin-bottom: 10.2rem;
+      margin-left: 2.8rem;
+    }
+
+    @include media.breakpoint(mobile) {
+      display: none;
+    }
+
+    & > svg {
+      right: 100%;
+      top: 100%;
+    }
+  }
+
+  &:nth-child(2) {
+    align-self: flex-start;
+    justify-self: flex-end;
+    margin-top: 28.8rem;
+    margin-right: 52.7rem;
+    & > svg {
+      left: 100%;
+      top: 100%;
+    }
+    @include media.breakpoint(laptop) {
+      margin-top: 14rem;
+      margin-right: 24rem;
+    }
+
+    @include media.breakpoint(small-tablet) {
+      margin-top: 8.7rem;
+      margin-right: 6rem;
+    }
+  }
+}
+
+.restaurant-intro__hall-card-title {
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.8rem;
+  letter-spacing: 0.14rem;
+  text-transform: uppercase;
+  margin-bottom: auto;
+}
+
+.restaurant-intro__hall-card-amount {
+  font-size: 6.4rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 80%;
+  letter-spacing: -0.448rem;
+  font-family: var(--tt-ramillas);
+}
+
+.restaurant-intro__hall-card-units {
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.2rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-align: right;
+}

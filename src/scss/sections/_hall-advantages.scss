@@ -1,0 +1,191 @@
+@use "../utils";
+@use "../media";
+
+.hall-advantages {
+  @include utils.blockWrapper;
+  margin-bottom: 16rem;
+
+  @include media.breakpoint(laptop) {
+    margin-bottom: 13.2rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    margin-bottom: 10rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    margin-bottom: 8rem;
+  }
+}
+
+.hall-advantages__content {
+  @include utils.blockContent;
+  display: flex;
+  flex-direction: column;
+}
+
+.hall-advantages__pattern {
+  align-self: center;
+  width: 12rem;
+  margin-bottom: 4rem;
+  @include media.breakpoint(laptop) {
+    width: 8.7rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    width: 3.9rem;
+  }
+}
+
+.hall-advantages__heading {
+  text-align: center;
+  text-wrap: balance;
+  margin-bottom: 6rem;
+  @include media.breakpoint(laptop) {
+    margin-bottom: 5rem;
+  }
+  @include media.breakpoint(small-tablet) {
+    margin-bottom: 3rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    margin-bottom: 4rem;
+  }
+}
+
+.hall-advantages__slider {
+  margin-bottom: 1.2rem;
+  @include media.breakpoint(laptop) {
+    margin-bottom: 1rem;
+  }
+
+  .swiper {
+    overflow: visible;
+  }
+
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    box-sizing: border-box;
+    width: calc(25% - 1.2rem * 3 / 4);
+    margin-right: 1.2rem;
+    @include media.breakpoint(laptop) {
+      margin-right: 1rem;
+      width: calc(25% - 1rem * 3 / 4);
+    }
+    @include media.breakpoint(small-tablet) {
+      width: 25rem;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.hall-advantages__slider-card {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 2rem;
+  border-radius: 1rem;
+  background: white;
+  color: var(--dark-text);
+  min-height: 24rem;
+  gap: 1.6rem;
+  @include media.breakpoint(laptop) {
+    min-height: 20rem;
+  }
+}
+
+.hall-advantages__slider-card-title {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.4rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+
+  @include media.breakpoint(laptop) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.8rem;
+    letter-spacing: 0.14rem;
+    text-transform: uppercase;
+  }
+  @include media.breakpoint(small-tablet) {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.4rem;
+    letter-spacing: 0.12rem;
+    text-transform: uppercase;
+  }
+}
+
+.hall-advantages__slider-card-icon {
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  width: 4.8rem;
+  height: 4.8rem;
+  background-color: #766b2c;
+  margin-top: auto;
+  img {
+    object-fit: contain;
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    width: 3rem;
+    height: 3rem;
+    img {
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+  }
+}
+
+.hall-advantages__gallery-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 1.2rem;
+  @include media.breakpoint(laptop) {
+    grid-gap: 1rem;
+  }
+  @include media.breakpoint(mobile) {
+    grid-template-columns: minmax(0, 1fr);
+    grid-gap: 0.8rem;
+  }
+}
+
+.hall-advantages__gallery-card {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  aspect-ratio: 914 / 692;
+  @include media.breakpoint(laptop) {
+    aspect-ratio: 658 / 498;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    aspect-ratio: 355 / 270;
+  }
+
+  @include media.breakpoint(mobile) {
+    aspect-ratio: 336 / 244;
+  }
+}
+
+.hall-advantages__gallery-card-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

@@ -6,15 +6,25 @@
   margin-bottom: 16rem;
 
   @include media.breakpoint(laptop) {
-    margin-bottom: 2rem;
+    margin-bottom: 12rem;
+    &:last-child {
+      margin-bottom: 2rem;
+    }
   }
 
   @include media.breakpoint(small-tablet) {
-    margin-bottom: 4rem;
+    margin-bottom: 10rem;
+
+    &:last-child {
+      margin-bottom: 4rem;
+    }
   }
 
   @include media.breakpoint(mobile) {
-    margin-bottom: 5.2rem;
+    margin-bottom: 8rem;
+    &:last-child {
+      margin-bottom: 5.2rem;
+    }
   }
 }
 

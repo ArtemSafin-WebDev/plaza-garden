@@ -16,6 +16,8 @@ import restaurantGallery from "./restaurant-gallery";
 import otherSpecial from "./other-special";
 import selects from "./selects";
 import forms from "./forms";
+import otherHalls from "./other-halls";
+import hallAdvantages from "./hall-advantages";
 
 document.addEventListener("DOMContentLoaded", () => {
   menu();
@@ -34,6 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
   otherSpecial();
   selects();
   forms();
+  otherHalls();
+  hallAdvantages();
 });
 
 window.addEventListener("load", () => {
