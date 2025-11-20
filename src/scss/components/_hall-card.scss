@@ -1,0 +1,191 @@
+@use "../utils";
+@use "../media";
+
+.hall-card {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.hall-card__image-container {
+  position: relative;
+  aspect-ratio: 605 / 442;
+  overflow: hidden;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+
+  @include media.breakpoint(laptop) {
+    aspect-ratio: 435 / 318;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    aspect-ratio: 355 / 258;
+  }
+
+  @include media.breakpoint(mobile) {
+    aspect-ratio: 336 / 244;
+  }
+}
+
+.hall-card__image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hall-card__content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem;
+  @include media.breakpoint(small-tablet) {
+    padding: 0;
+  }
+}
+
+.hall-card__card-title {
+  margin-bottom: 2rem;
+}
+
+.hall-card__card-features-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 1.2rem;
+  margin-bottom: 3rem;
+
+  @include media.breakpoint(laptop) {
+    display: flex;
+    align-items: flex-start;
+    gap: 5.6rem;
+    row-gap: 1.6rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 1rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.hall-card__card-features-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.hall-card__card-features-card-key {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.4rem;
+  letter-spacing: -0.04rem;
+  color: var(--grey-text);
+  @include media.breakpoint(laptop) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2.2rem;
+    letter-spacing: -0.032rem;
+  }
+}
+
+.hall-card__card-features-card-value {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.4rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  @include media.breakpoint(laptop) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: 0.16rem;
+    text-transform: uppercase;
+  }
+}
+
+.hall-card__card-btns {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hall-card__card-outline-btn {
+  text-align: center;
+  display: block;
+  padding: 1rem 1.2rem;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.8rem;
+  letter-spacing: -0.032rem;
+  border-radius: 10rem;
+  border: 1px solid var(--dark-text);
+  flex-shrink: 0;
+  color: var(--dark-text);
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  &:link,
+  &:visited {
+    color: var(--dark-text);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: var(--dark-text);
+      border-color: var(--dark-text);
+      color: white;
+    }
+  }
+
+  @include media.breakpoint(laptop) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.6rem;
+    letter-spacing: -0.028rem;
+    padding: 0.8rem 1rem;
+  }
+}
+
+.hall-card__card-filled-btn {
+  text-align: center;
+  display: block;
+  padding: 1rem 1.2rem;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.8rem;
+  letter-spacing: -0.032rem;
+  border-radius: 10rem;
+  border: 1px solid var(--primary-color);
+  flex-shrink: 0;
+  color: white;
+  background-color: var(--primary-color);
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+
+  &:link,
+  &:visited {
+    color: white;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: var(--primary-color-hover);
+      border-color: var(--primary-color-hover);
+    }
+  }
+
+  @include media.breakpoint(laptop) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.6rem;
+    letter-spacing: -0.028rem;
+    padding: 0.8rem 1rem;
+  }
+}

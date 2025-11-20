@@ -7,6 +7,7 @@ import room from "./pages-data/room";
 import services from "./pages-data/services";
 import special from "./pages-data/special";
 import specialDetail from "./pages-data/special-detail";
+import events from "./pages-data/events";
 
 const pagesConfig = {
   ...home,
@@ -18,6 +19,7 @@ const pagesConfig = {
   ...restaurant,
   ...special,
   ...specialDetail,
+  ...events,
 };
 
 export default pagesConfig;

@@ -1,0 +1,210 @@
+<section class="event-form">
+    <div class="event-form__content">
+        <h2 class="h2 event-form__heading">
+            Запрос на мероприятие
+        </h2>
+        <form action="/" method="POST" class="event-form__form js-form">
+            <div class="event-form__fields">
+                <div class="event-form__field">
+                    <label class="event-form__label">
+                        <input type="text" class="event-form__input" name="name" placeholder="ваше имя" required=""
+                            autocomplete="off">
+                        <span class="event-form__label-text">
+                            ваше имя
+                        </span>
+                    </label>
+                </div>
+                <div class="event-form__field">
+                    <label class="event-form__label">
+                        <input type="tel" class="event-form__input" name="phone" placeholder="телефон" required=""
+                            autocomplete="off">
+                        <span class="event-form__label-text">
+                            телефон
+                        </span>
+                    </label>
+                </div>
+                <div class="event-form__field event-form__field--short">
+                    <div class="event-form__select js-select" data-required-select>
+                        <button class="event-form__select-btn" type="button">
+                            <span class="event-form__select-btn-text js-btn-text">
+
+                            </span>
+                            <span class="event-form__select-btn-label">
+                                Время
+                            </span>
+                            <svg width="12" height="12" aria-hidden="true">
+                                <use xlink:href="#clock"></use>
+                            </svg>
+                        </button>
+                        <div class="event-form__select-dropdown">
+                            <div class="event-form__select-dropdown-inner">
+                                <label class="event-form__select-option">
+                                    <input type="radio" class="event-form__select-option-input" name="time"
+                                        value="10:00">
+                                    <span class="event-form__select-option-text">
+                                        10:00
+                                    </span>
+                                </label>
+                                <label class="event-form__select-option">
+                                    <input type="radio" class="event-form__select-option-input" name="time"
+                                        value="11:00">
+                                    <span class="event-form__select-option-text">
+                                        11:00
+                                    </span>
+                                </label>
+                                <label class="event-form__select-option">
+                                    <input type="radio" class="event-form__select-option-input" name="time"
+                                        value="12:00">
+                                    <span class="event-form__select-option-text">
+                                        12:00
+                                    </span>
+                                </label>
+                                <label class="event-form__select-option">
+                                    <input type="radio" class="event-form__select-option-input" name="time"
+                                        value="13:00">
+                                    <span class="event-form__select-option-text">
+                                        13:00
+                                    </span>
+                                </label>
+                                <label class="event-form__select-option">
+                                    <input type="radio" class="event-form__select-option-input" name="time"
+                                        value="14:00">
+                                    <span class="event-form__select-option-text">
+                                        14:00
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-form__field event-form__field--short">
+                    <label class="event-form__label">
+                        <input type="text" class="event-form__input" name="date" placeholder="дата" required=""
+                            data-date-input>
+                        <span class="event-form__label-text">
+                            дата
+                        </span>
+                        <svg width="12" height="12" aria-hidden="true">
+                            <use xlink:href="#date"></use>
+                        </svg>
+                    </label>
+                </div>
+                <div class="event-form__field event-form__field--short">
+                    <label class="event-form__label">
+                        <input type="text" class="event-form__input" name="persons" placeholder="количество людей"
+                            pattern="[0-9]+" required="" inputmode="numeric">
+                        <span class="event-form__label-text">
+                            количество людей
+                        </span>
+                    </label>
+                </div>
+                <div class="event-form__field">
+                    <div class="event-form__select js-select" data-required-select>
+                        <button class="event-form__select-btn" type="button">
+                            <span class="event-form__select-btn-text js-btn-text">
+
+                            </span>
+                            <span class="event-form__select-btn-label">
+                                зал
+                            </span>
+                            <svg width="12" height="12" aria-hidden="true" class="shevron-icon">
+                                <use xlink:href="#shevron"></use>
+                            </svg>
+                        </button>
+                        <div class="event-form__select-dropdown">
+                            <div class="event-form__select-dropdown-inner">
+                                <label class="event-form__select-option">
+                                    <input type="radio" class="event-form__select-option-input" name="hall"
+                                        value="зал 1">
+                                    <span class="event-form__select-option-text">
+                                        зал 1
+                                    </span>
+                                </label>
+                                <label class="event-form__select-option">
+                                    <input type="radio" class="event-form__select-option-input" name="hall"
+                                        value="зал 2">
+                                    <span class="event-form__select-option-text">
+                                        зал 2
+                                    </span>
+                                </label>
+                                <label class="event-form__select-option">
+                                    <input type="radio" class="event-form__select-option-input" name="hall"
+                                        value="зал 3">
+                                    <span class="event-form__select-option-text">
+                                        зал 3
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-form__field">
+                    <div class="event-form__select js-select" data-required-select>
+                        <button class="event-form__select-btn" type="button">
+                            <span class="event-form__select-btn-text js-btn-text">
+
+                            </span>
+                            <span class="event-form__select-btn-label">
+                                рассадка
+                            </span>
+                            <svg width="12" height="12" aria-hidden="true" class="shevron-icon">
+                                <use xlink:href="#shevron"></use>
+                            </svg>
+                        </button>
+                        <div class="event-form__select-dropdown">
+                            <div class="event-form__select-dropdown-inner">
+                                <label class="event-form__select-option">
+                                    <input type="radio" class="event-form__select-option-input" name="placement"
+                                        value="рассадка 1">
+                                    <span class="event-form__select-option-text">
+                                        рассадка 1
+                                    </span>
+                                </label>
+                                <label class="event-form__select-option">
+                                    <input type="radio" class="event-form__select-option-input" name="placement"
+                                        value="рассадка 2">
+                                    <span class="event-form__select-option-text">
+                                        рассадка 2
+                                    </span>
+                                </label>
+                                <label class="event-form__select-option">
+                                    <input type="radio" class="event-form__select-option-input" name="placement"
+                                        value="рассадка 3">
+                                    <span class="event-form__select-option-text">
+                                        рассадка 3
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-form__field event-form__field--wide">
+                    <label class="event-form__label">
+                        <input type="text" class="event-form__input" name="comment" placeholder="пожелания">
+                        <span class="event-form__label-text">
+                            пожелания
+                        </span>
+                    </label>
+                </div>
+            </div>
+            <div class="event-form__policy">
+                <label class="event-form__policy-checkbox">
+                    <input type="checkbox" name="policy" value="Y" class="event-form__policy-checkbox-input"
+                        required="">
+                    <span class="event-form__policy-checkbox-mark">
+                        <span class="event-form__policy-checkbox-mark-inner">
+
+                        </span>
+                    </span>
+                    <span class="event-form__policy-checkbox-text">
+                        принимаю условия обработки персональных данных
+                    </span>
+                </label>
+            </div>
+            <button class="event-form__submit" type="submit">
+                Забронировать зал
+            </button>
+
+        </form>
+    </div>
+</section>

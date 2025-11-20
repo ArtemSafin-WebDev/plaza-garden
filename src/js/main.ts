@@ -14,6 +14,8 @@ import services from "./services";
 import otherRestaurants from "./other-restaurants";
 import restaurantGallery from "./restaurant-gallery";
 import otherSpecial from "./other-special";
+import selects from "./selects";
+import forms from "./forms";
 
 document.addEventListener("DOMContentLoaded", () => {
   menu();
@@ -30,6 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
   otherRestaurants();
   restaurantGallery();
   otherSpecial();
+  selects();
+  forms();
 });
 
 window.addEventListener("load", () => {

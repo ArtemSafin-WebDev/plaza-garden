@@ -7,6 +7,7 @@
 @use "components/btn";
 @use "components/menu";
 @use "components/room-card";
+@use "components/hall-card";
 @use "components/restaurant-card";
 @use "components/booking-form";
 @use "sections/infrastructure";
@@ -33,3 +34,7 @@
 @use "sections/special-catalog";
 @use "sections/special-info";
 @use "sections/other-special";
+@use "sections/event";
+@use "sections/halls";
+@use "sections/weddings";
+@use "sections/event-form";
