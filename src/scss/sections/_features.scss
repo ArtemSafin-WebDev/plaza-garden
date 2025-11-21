@@ -1,0 +1,242 @@
+@use "../utils";
+@use "../media";
+
+.features {
+  @include utils.blockWrapper;
+}
+
+.features__content {
+  @include utils.blockContent;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.features__top {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-gap: 1.2rem;
+  grid-row-gap: 4rem;
+  @include media.breakpoint(laptop) {
+    grid-gap: 1rem;
+  }
+  @include media.breakpoint(small-tablet) {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    gap: 0.6rem;
+  }
+}
+
+.features__heading {
+  grid-column: 1 / -1;
+}
+
+.features__text {
+  grid-column: 8 / 12;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.8rem;
+  letter-spacing: -0.04rem;
+  color: var(--grey-text);
+
+  @include media.breakpoint(laptop) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2rem;
+    letter-spacing: -0.032rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem;
+    letter-spacing: -0.028rem;
+  }
+}
+
+.features__bottom {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "stack";
+}
+
+.features__bg {
+  grid-area: stack;
+  width: 100vw;
+  left: 50%;
+  position: relative;
+  transform: translateX(-50%);
+  aspect-ratio: 1920 / 1408;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.7) 66.83%
+    );
+  }
+
+  @include media.breakpoint(laptop) {
+    aspect-ratio: 1366 / 1000;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    aspect-ratio: 1 / 1;
+  }
+
+  @include media.breakpoint(mobile) {
+    aspect-ratio: 360 / 800;
+  }
+}
+
+.features__bg-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.features__bottom-content {
+  grid-area: stack;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 4rem 0;
+  gap: 4rem;
+  z-index: 5;
+  color: white;
+  align-self: stretch;
+
+  @include media.breakpoint(laptop) {
+    padding: 2rem 0;
+    gap: 3rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    padding: 4rem 0;
+  }
+
+  @include media.breakpoint(mobile) {
+    padding: 1.2rem 0;
+  }
+}
+
+.features__bottom-title {
+  max-width: 121.2rem;
+
+  @include media.breakpoint(laptop) {
+    max-width: 88rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    max-width: 62rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    max-width: none;
+  }
+}
+
+.features__slider {
+  .swiper {
+    overflow: visible;
+  }
+
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    box-sizing: border-box;
+    margin-right: 1rem;
+    width: 35.8rem;
+    &:last-child {
+      margin-right: 0;
+    }
+    @include media.breakpoint(laptop) {
+      width: 32.4rem;
+    }
+
+    @include media.breakpoint(small-tablet) {
+      width: 25rem;
+    }
+  }
+}
+
+.features__slider-card {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 24rem;
+  border-radius: 1rem;
+  background: white;
+  color: var(--dark-text);
+  gap: 1.6rem;
+  padding: 2rem;
+  @include media.breakpoint(laptop) {
+    min-height: 20rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    min-height: 18rem;
+  }
+}
+
+.features__slider-card-title {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.4rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  @include media.breakpoint(laptop) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.8rem;
+    letter-spacing: 0.14rem;
+    text-transform: uppercase;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.6rem;
+    letter-spacing: 0.12rem;
+    text-transform: uppercase;
+  }
+}
+
+.features__slider-card-icon {
+  display: block;
+  margin-top: auto;
+  width: 4.8rem;
+  height: 4.8rem;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: #4e1c54;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    width: 3rem;
+    height: 3rem;
+    background-color: #766b2c;
+  }
+}

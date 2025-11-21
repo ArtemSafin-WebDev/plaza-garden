@@ -1,0 +1,130 @@
+@use "../utils";
+@use "../media";
+
+.history {
+  @include utils.blockWrapper;
+  background-color: #24292f;
+  color: white;
+}
+
+.history__content {
+  @include utils.blockContent;
+
+  @include media.breakpoint(mobile) {
+    padding-bottom: 3.4rem;
+    padding-top: 1.7rem;
+  }
+}
+
+.history__row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  min-height: min(108rem, 100vh);
+  @include media.breakpoint(laptop) {
+    min-height: min(76.8rem, 100vh);
+  }
+
+  @include media.breakpoint(small-tablet) {
+    min-height: 76.8rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+  }
+}
+
+.history__left-col {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 0;
+
+  @include media.breakpoint(laptop) {
+    display: contents;
+  }
+}
+
+.history__right-col {
+  display: flex;
+  flex-direction: column;
+  @include media.breakpoint(laptop) {
+    display: contents;
+  }
+}
+
+.history__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+
+  @include media.breakpoint(small-tablet) {
+    display: none;
+  }
+}
+
+.history__bg-wrapper {
+  flex-grow: 1;
+  margin-left: calc(-1 * (100vw - 100% * 2) / 2);
+  position: relative;
+  background-image: url("../images/restaurants-pattern.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.history__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-top: auto;
+
+  @include media.breakpoint(mobile) {
+    margin: 0;
+    gap: 2rem;
+    min-height: 30rem;
+    justify-content: flex-end;
+  }
+}
+
+.history__right-col {
+  display: flex;
+  flex-direction: column;
+
+  @include media.breakpoint(mobile) {
+    display: contents;
+  }
+}
+
+.history__image-container {
+  flex-grow: 1;
+  position: relative;
+  margin-right: calc(-1 * (100vw - 100% * 2) / 2);
+
+  @include media.breakpoint(mobile) {
+    margin: 0;
+    aspect-ratio: 336 / 378;
+    width: 100%;
+    order: -10;
+  }
+}
+
+.history__image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.history__heading {
+  @include media.breakpoint(small-tablet) {
+    padding-right: 2rem;
+  }
+}

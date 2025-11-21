@@ -18,6 +18,8 @@ import selects from "./selects";
 import forms from "./forms";
 import otherHalls from "./other-halls";
 import hallAdvantages from "./hall-advantages";
+import features from "./features";
+import hotelAbout from "./hotel-about";
 
 document.addEventListener("DOMContentLoaded", () => {
   menu();
@@ -38,6 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
   forms();
   otherHalls();
   hallAdvantages();
+  features();
+  hotelAbout();
 });
 
 window.addEventListener("load", () => {

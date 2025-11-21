@@ -1,0 +1,253 @@
+@use "../utils";
+@use "../media";
+
+.wtc {
+  @include utils.blockWrapper;
+  margin-bottom: 16rem;
+  @include media.breakpoint(laptop) {
+    margin-bottom: 2rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    margin-bottom: 4rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    margin-bottom: 5.2rem;
+  }
+}
+
+.wtc__content {
+  @include utils.blockContent;
+  display: flex;
+  flex-direction: column;
+  grid-row: 1 / 2;
+  padding-bottom: 3rem;
+  z-index: 5;
+  color: white;
+
+  @include media.breakpoint(laptop) {
+    padding-bottom: 2rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    padding-bottom: 4rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    padding-bottom: 3rem;
+  }
+}
+
+.wtc__bg {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  aspect-ratio: 1920 / 1264;
+  position: relative;
+
+  @include media.breakpoint(laptop) {
+    aspect-ratio: 1366 / 900;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    aspect-ratio: 768 / 1024;
+  }
+
+  @include media.breakpoint(mobile) {
+    aspect-ratio: 360 / 800;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.7) 100%
+    );
+    aspect-ratio: 1920 / 1044;
+    @include media.breakpoint(laptop) {
+      aspect-ratio: 1366 / 744;
+    }
+
+    @include media.breakpoint(small-tablet) {
+      aspect-ratio: 768 / 744;
+    }
+
+    @include media.breakpoint(mobile) {
+      aspect-ratio: 360 / 700;
+    }
+  }
+}
+
+.wtc__bg-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wtc__card {
+  margin-top: 19.8rem;
+  margin-left: 26rem;
+  width: 50rem;
+  border-radius: 1rem;
+  background: white;
+  padding: 2rem;
+  color: var(--dark-text);
+  gap: 1.6rem;
+  min-height: 28rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  svg {
+    position: absolute;
+    left: 100%;
+    top: 100%;
+    width: 1.8rem;
+    height: 1.8rem;
+    fill: white;
+    pointer-events: none;
+  }
+
+  @include media.breakpoint(laptop) {
+    width: 35rem;
+    margin-top: 15.6rem;
+    margin-left: 20rem;
+    min-height: 20rem;
+    width: 35rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    width: 23.2rem;
+    min-height: 13.8rem;
+    padding: 1rem;
+    margin: 0;
+    margin-left: auto;
+    margin-top: 30.4rem;
+    margin-right: 14.4rem;
+
+    svg {
+      left: auto;
+      right: 100%;
+    }
+  }
+
+  @include media.breakpoint(mobile) {
+    width: 23.2rem;
+    min-height: 13.8rem;
+    margin-top: 20.7rem;
+    margin-right: 1.8rem;
+  }
+}
+
+.wtc__card-text {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.4rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+
+  @include media.breakpoint(laptop) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.8rem;
+    letter-spacing: 0.14rem;
+    text-transform: uppercase;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+  }
+}
+
+.wtc__card-icon {
+  margin-top: auto;
+  width: 4.8rem;
+  height: 4.8rem;
+  background-color: #766b2c;
+  border-radius: 50%;
+
+  @include media.breakpoint(laptop) {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.wtc__bottom-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 10rem;
+  justify-content: space-between;
+  margin-top: auto;
+
+  @include media.breakpoint(small-tablet) {
+    gap: 2rem;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  @include media.breakpoint(mobile) {
+    gap: 1rem;
+  }
+}
+
+.wtc__text {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.4rem;
+  letter-spacing: -0.04rem;
+  max-width: 76.2rem;
+  margin-bottom: 1rem;
+
+  @include media.breakpoint(laptop) {
+    max-width: 44rem;
+    margin-bottom: 3rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem;
+    letter-spacing: -0.028rem;
+    max-width: 54rem;
+    margin: 0;
+  }
+}
+
+.wtc__heading {
+  text-align: right;
+
+  @include media.breakpoint(small-tablet) {
+    text-align: left;
+    order: -10;
+  }
+}
