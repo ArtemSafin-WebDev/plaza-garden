@@ -10,6 +10,7 @@ import specialDetail from "./pages-data/special-detail";
 import events from "./pages-data/events";
 import hall from "./pages-data/hall";
 import hotel from "./pages-data/hotel";
+import documents from "./pages-data/documents";
 
 const pagesConfig = {
   ...home,
@@ -24,6 +25,7 @@ const pagesConfig = {
   ...events,
   ...hall,
   ...hotel,
+  ...documents,
 };
 
 export default pagesConfig;

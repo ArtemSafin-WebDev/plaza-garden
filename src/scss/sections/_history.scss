@@ -42,7 +42,7 @@
   flex-direction: column;
   padding: 4rem 0;
 
-  @include media.breakpoint(laptop) {
+  @include media.breakpoint(mobile) {
     display: contents;
   }
 }
@@ -50,7 +50,7 @@
 .history__right-col {
   display: flex;
   flex-direction: column;
-  @include media.breakpoint(laptop) {
+  @include media.breakpoint(mobile) {
     display: contents;
   }
 }

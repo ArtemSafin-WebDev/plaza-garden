@@ -1,0 +1,94 @@
+@use "../utils";
+@use "../media";
+
+.documents {
+  @include utils.blockWrapper;
+  padding-top: 13rem;
+  margin-bottom: 16rem;
+
+  @include media.breakpoint(laptop) {
+    padding-top: 12.4rem;
+    margin-bottom: 13.3rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    padding-top: 9.4rem;
+    margin-bottom: 4rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    padding-top: 9.4rem;
+    margin-bottom: 5.2rem;
+  }
+}
+
+.documents__content {
+  @include utils.blockContent;
+  display: flex;
+  flex-direction: column;
+}
+
+.documents__breadcrumbs {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-bottom: 4rem;
+  color: #868f99;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.8rem;
+  letter-spacing: -0.024rem;
+
+  @include media.breakpoint(small-tablet) {
+    margin-bottom: 3rem;
+  }
+
+  a {
+    &.active {
+      cursor: default;
+      pointer-events: none;
+    }
+
+    &:hover {
+      color: var(--dark-text);
+    }
+  }
+}
+
+.documents__heading {
+  text-align: center;
+  margin-bottom: 6rem;
+  @include media.breakpoint(laptop) {
+    margin-bottom: 3rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    margin-bottom: 4rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    margin-bottom: 3.4rem;
+  }
+}
+
+.documents__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 1.2rem;
+  @include media.breakpoint(laptop) {
+    grid-gap: 1rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 1rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
