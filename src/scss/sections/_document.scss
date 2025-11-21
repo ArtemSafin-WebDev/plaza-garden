@@ -1,0 +1,160 @@
+@use "../utils";
+@use "../media";
+
+.document {
+  @include utils.blockWrapper;
+  margin-bottom: 16rem;
+  padding-top: 13rem;
+
+  @include media.breakpoint(laptop) {
+    margin-bottom: 12rem;
+    padding-top: 12.4rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    padding-top: 9.4rem;
+    margin-bottom: 5.2rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    padding-top: 9.4rem;
+    margin-bottom: 5.2rem;
+  }
+}
+
+.document__content {
+  @include utils.blockContent;
+  display: flex;
+  flex-direction: column;
+}
+
+.document__breadcrumbs {
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.8rem;
+  letter-spacing: -0.028rem;
+  color: #868f99;
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  justify-content: center;
+  margin-bottom: 4rem;
+
+  a {
+    &.active {
+      cursor: default;
+      pointer-events: none;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: var(--dark-text);
+      }
+    }
+  }
+
+  @include media.breakpoint(laptop) {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.8rem;
+    letter-spacing: -0.024rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    margin-bottom: 3rem;
+  }
+}
+
+.document__heading {
+  text-align: center;
+  text-wrap: balance;
+  margin-bottom: 8.8rem;
+  @include media.breakpoint(laptop) {
+    margin-bottom: 4rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    text-align: left;
+  }
+}
+
+.document__text-content {
+  width: 100%;
+  align-self: center;
+  max-width: 122.2rem;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.8rem;
+  letter-spacing: -0.04rem;
+  color: var(--grey-text);
+
+  @include media.breakpoint(laptop) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2.2rem;
+    letter-spacing: -0.032rem;
+    max-width: 85.4rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2rem;
+    letter-spacing: -0.028rem;
+    max-width: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 4.8rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 4.8rem;
+    letter-spacing: -0.288rem;
+    font-family: var(--tt-ramillas);
+    margin-top: 7rem;
+    color: var(--dark-text);
+
+    @include media.breakpoint(laptop) {
+      font-size: 3.2rem;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 3.6rem;
+      letter-spacing: -0.192rem;
+      margin-top: 7rem;
+    }
+
+    @include media.breakpoint(small-tablet) {
+      font-size: 2.4rem;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 2.8rem;
+      letter-spacing: -0.144rem;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  p {
+    margin-top: 3rem;
+
+    @include media.breakpoint(small-tablet) {
+      margin-top: 2rem;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}

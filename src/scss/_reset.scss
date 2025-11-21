@@ -248,3 +248,9 @@ select:-webkit-autofill:focus {
     display: none;
   }
 }
+
+.hide-on-mobile {
+  @include media.breakpoint(mobile) {
+    display: none;
+  }
+}
