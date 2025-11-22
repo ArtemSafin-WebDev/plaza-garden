@@ -109,7 +109,7 @@ export default function history() {
 
   elements.forEach((element) => {
     let mm = gsap.matchMedia();
-    mm.add("(min-width: 769px)", () => {
+    mm.add("(min-width: 1025px)", () => {
       const slider = initSlider(element);
       return () => {
         if (slider) slider();

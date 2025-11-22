@@ -3,36 +3,12 @@
     @media only screen and (max-width: (1500px)) {
       @content;
     }
-  } @else if $class == tablet {
-    @media only screen and (max-width: (1024px)) {
-      @content;
-    }
   } @else if $class == small-tablet {
-    @media only screen and (max-width: (768px)) {
+    @media only screen and (max-width: (1024px)) {
       @content;
     }
   } @else if $class == mobile {
     @media only screen and (max-width: (576px)) {
-      @content;
-    }
-  }
-}
-
-@mixin breakpointMF($class) {
-  @if $class == desktop {
-    @media only screen and (min-width: 1501px) {
-      @content;
-    }
-  } @else if $class == laptop {
-    @media only screen and (min-width: 1025px) {
-      @content;
-    }
-  } @else if $class == tablet {
-    @media only screen and (min-width: 769px) {
-      @content;
-    }
-  } @else if $class == small-tablet {
-    @media only screen and (min-width: 577px) {
       @content;
     }
   }

@@ -482,7 +482,7 @@
   flex-shrink: 0;
   position: relative;
 
-  @include media.breakpointMF(tablet) {
+  @media (hover: hover) and (pointer: fine) {
     &:hover {
       .menu__language-dropdown {
         opacity: 1;

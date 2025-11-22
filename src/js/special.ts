@@ -14,7 +14,7 @@ export default function special() {
     if (!container) return;
     let mm = gsap.matchMedia();
 
-    mm.add("(max-width: 768px)", () => {
+    mm.add("(max-width: 1024px)", () => {
       const instance = new Swiper(container, {
         slidesPerView: "auto",
         speed: 600,
