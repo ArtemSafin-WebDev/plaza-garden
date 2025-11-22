@@ -22,6 +22,7 @@ import features from "./features";
 import hotelAbout from "./hotel-about";
 import formats from "./formats";
 import contacts from "./contacts";
+import history from "./history";
 
 document.addEventListener("DOMContentLoaded", () => {
   menu();
@@ -46,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   hotelAbout();
   formats();
   contacts();
+  history();
 });
 
 window.addEventListener("load", () => {
