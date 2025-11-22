@@ -11,6 +11,8 @@ import events from "./pages-data/events";
 import hall from "./pages-data/hall";
 import hotel from "./pages-data/hotel";
 import documents from "./pages-data/documents";
+import document from "./pages-data/document";
+import wedding from "./pages-data/wedding";
 
 const pagesConfig = {
   ...home,
@@ -26,6 +28,8 @@ const pagesConfig = {
   ...hall,
   ...hotel,
   ...documents,
+  ...document,
+  ...wedding,
 };
 
 export default pagesConfig;

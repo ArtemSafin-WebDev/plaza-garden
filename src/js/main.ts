@@ -20,6 +20,7 @@ import otherHalls from "./other-halls";
 import hallAdvantages from "./hall-advantages";
 import features from "./features";
 import hotelAbout from "./hotel-about";
+import formats from "./formats";
 
 document.addEventListener("DOMContentLoaded", () => {
   menu();
@@ -42,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
   hallAdvantages();
   features();
   hotelAbout();
+  formats();
 });
 
 window.addEventListener("load", () => {

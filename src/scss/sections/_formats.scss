@@ -1,0 +1,171 @@
+@use "../utils";
+@use "../media";
+
+.formats {
+  @include utils.blockWrapper;
+  margin-bottom: 16rem;
+  @include media.breakpoint(laptop) {
+    margin-bottom: 12rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    margin-bottom: 10rem;
+  }
+  @include media.breakpoint(mobile) {
+    margin-bottom: 8.8rem;
+  }
+}
+
+.formats__content {
+  @include utils.blockContent;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-gap: 1.2rem;
+  grid-row-gap: 6rem;
+  @include media.breakpoint(laptop) {
+    grid-gap: 1rem;
+    grid-row-gap: 4rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+  @include media.breakpoint(mobile) {
+  }
+}
+
+.formats__top {
+  grid-column: 3 / 11;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.formats__text {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.8rem;
+  letter-spacing: -0.04rem;
+  color: var(--grey-text);
+  @include media.breakpoint(laptop) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2.2rem;
+    letter-spacing: -0.032rem;
+  }
+  @include media.breakpoint(mobile) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem;
+    letter-spacing: -0.028rem;
+  }
+}
+
+.formats__slider {
+  grid-column: 1 / -1;
+  position: relative;
+  .swiper {
+    overflow: visible;
+  }
+
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    box-sizing: border-box;
+    margin-right: 1.2rem;
+    width: calc(33.33% - 1.2rem * 2 / 3);
+    &:last-child {
+      margin-right: 0;
+    }
+    @include media.breakpoint(laptop) {
+      width: calc(33.33% - 1rem * 2 / 3);
+      margin-right: 1rem;
+    }
+
+    @include media.breakpoint(small-tablet) {
+      width: calc(50% - 1rem * 1 / 2);
+    }
+    @include media.breakpoint(mobile) {
+      width: 100%;
+    }
+  }
+}
+
+.formats__slider-arrow {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: 32%;
+  transform: translateY(-50%);
+  width: 4.8rem;
+  height: 4.8rem;
+  background-color: white;
+  z-index: 5;
+  border-radius: 50%;
+  transition: opacity 0.2s, background-color 0.2s, visibility 0.2s;
+
+  &.swiper-button-lock {
+    display: none;
+  }
+
+  &.swiper-button-disabled {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0s linear 0.2s, background-color 0.2s;
+  }
+
+  @include media.breakpoint(laptop) {
+    width: 4.4rem;
+    height: 4.4rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    top: 30%;
+  }
+
+  @include media.breakpoint(mobile) {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  &--prev {
+    left: 1rem;
+  }
+
+  &--next {
+    right: 1rem;
+  }
+
+  svg {
+    width: 2.6rem;
+    height: 2.6rem;
+    fill: var(--dark-text);
+    transition: fill 0.2s;
+
+    @include media.breakpoint(laptop) {
+      width: 2.4rem;
+      height: 2.4rem;
+      fill: var(--primary-color);
+    }
+
+    @include media.breakpoint(mobile) {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:not(.swiper-button-disabled):hover {
+      background-color: var(--primary-color);
+      svg {
+        fill: white;
+      }
+    }
+  }
+}
