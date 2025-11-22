@@ -13,6 +13,7 @@ import hotel from "./pages-data/hotel";
 import documents from "./pages-data/documents";
 import document from "./pages-data/document";
 import wedding from "./pages-data/wedding";
+import contacts from "./pages-data/contacts";
 
 const pagesConfig = {
   ...home,
@@ -30,6 +31,7 @@ const pagesConfig = {
   ...documents,
   ...document,
   ...wedding,
+  ...contacts,
 };
 
 export default pagesConfig;

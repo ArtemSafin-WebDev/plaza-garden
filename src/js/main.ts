@@ -21,6 +21,7 @@ import hallAdvantages from "./hall-advantages";
 import features from "./features";
 import hotelAbout from "./hotel-about";
 import formats from "./formats";
+import contacts from "./contacts";
 
 document.addEventListener("DOMContentLoaded", () => {
   menu();
@@ -44,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
   features();
   hotelAbout();
   formats();
+  contacts();
 });
 
 window.addEventListener("load", () => {

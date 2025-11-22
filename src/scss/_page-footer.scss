@@ -3,18 +3,22 @@
 
 .page-footer {
   @include utils.blockWrapper;
-  margin-bottom: 4rem;
+  padding-bottom: 4rem;
+
+  &--dark {
+    background-color: #24292f;
+  }
 
   @include media.breakpoint(laptop) {
-    margin-bottom: 2rem;
+    padding-bottom: 2rem;
   }
 
   @include media.breakpoint(small-tablet) {
-    margin-bottom: 4rem;
+    padding-bottom: 4rem;
   }
 
   @include media.breakpoint(mobile) {
-    margin-bottom: 1.2rem;
+    padding-bottom: 1.2rem;
   }
 }
 
@@ -25,6 +29,11 @@
   border-radius: 1rem;
   background: white;
   padding: 2rem 2.8rem;
+
+  .page-footer--dark & {
+    background-color: #24292f;
+    color: white;
+  }
 
   @include media.breakpoint(laptop) {
     padding: 2rem;
@@ -147,6 +156,19 @@
     transition: fill 0.2s;
   }
 
+  .page-footer--dark & {
+    svg {
+      fill: white;
+    }
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        svg {
+          fill: white;
+        }
+      }
+    }
+  }
+
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       svg {
@@ -191,6 +213,14 @@
       color: var(--primary-color);
     }
   }
+
+  .page-footer--dark & {
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: white;
+      }
+    }
+  }
 }
 
 .page-footer__nav-submenu-list {
@@ -217,6 +247,14 @@
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       color: var(--dark-text);
+    }
+  }
+
+  .page-footer--dark & {
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: white;
+      }
     }
   }
 }
@@ -310,6 +348,14 @@
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       color: var(--dark-text);
+    }
+  }
+
+  .page-footer--dark & {
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: white;
+      }
     }
   }
 
@@ -421,6 +467,14 @@
     }
   }
 
+  .page-footer--dark & {
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
   @include media.breakpoint(small-tablet) {
     font-size: 1rem;
     font-style: normal;
@@ -459,6 +513,13 @@
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       color: var(--primary-color);
+    }
+  }
+  .page-footer--dark & {
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: white;
+      }
     }
   }
 
@@ -531,6 +592,14 @@
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       color: var(--dark-text);
+    }
+  }
+
+  .page-footer--dark & {
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: white;
+      }
     }
   }
 
