@@ -1,0 +1,125 @@
+@use "../utils";
+@use "../media";
+
+.not-found {
+  @include utils.blockWrapper;
+  background-color: var(--primary-color);
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.not-found__content {
+  @include utils.blockContent;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: 1fr auto 1fr;
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+.not-found__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.not-found__bg-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.not-found__logo {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  align-self: flex-start;
+  justify-self: center;
+  margin-top: 3rem;
+}
+
+.not-found__logo-image {
+  display: block;
+  height: auto;
+  width: 13.6rem;
+  @include media.breakpoint(laptop) {
+    width: 10.2rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    width: 9.2rem;
+  }
+}
+
+.not-found__text-content {
+  max-width: 63.8rem;
+  align-self: center;
+  justify-self: center;
+  gap: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.not-found__text {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.8rem;
+  letter-spacing: -0.04rem;
+  color: #c6bc83;
+  @include media.breakpoint(laptop) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2.2rem;
+    letter-spacing: -0.032rem;
+  }
+  @include media.breakpoint(small-tablet) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem;
+    letter-spacing: -0.028rem;
+  }
+}
+
+.not-found__link {
+  align-self: flex-end;
+  justify-self: center;
+  display: block;
+  text-align: center;
+  margin-bottom: 5.7rem;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.6rem;
+  letter-spacing: -0.028rem;
+  padding: 0.8rem 1rem;
+  border-radius: 10rem;
+  background: white;
+  color: var(--primary-color);
+  transition: color 0.2s, background-color 0.2s;
+  &:link,
+  &:visited {
+    color: var(--primary-color);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+  }
+
+  @include media.breakpoint(small-tablet) {
+    margin-bottom: 3rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    margin-bottom: 2rem;
+  }
+}
