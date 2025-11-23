@@ -23,6 +23,7 @@ import hotelAbout from "./hotel-about";
 import formats from "./formats";
 import contacts from "./contacts";
 import history from "./history";
+import restaurants from "./restaurants";
 
 document.addEventListener("DOMContentLoaded", () => {
   menu();
@@ -48,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
   formats();
   contacts();
   history();
+  restaurants();
 });
 
 window.addEventListener("load", () => {
