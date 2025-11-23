@@ -248,8 +248,123 @@
 }
 
 .page-header__login {
-  margin-right: 0.6rem;
+  margin-right: 1.1rem;
   @include media.breakpoint(small-tablet) {
     margin-right: -0.4rem;
+  }
+}
+
+.page-header__language {
+  position: relative;
+  margin-right: 1.1rem;
+
+  &:hover {
+    .page-header__language-dropdown {
+      opacity: 1;
+      visibility: inherit;
+      transition: opacity 0.4s, visibility 0.4s;
+    }
+  }
+  @include media.breakpoint(small-tablet) {
+    display: none;
+  }
+}
+
+.page-header__language-current {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  gap: 0.7rem;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.8rem;
+  letter-spacing: -0.028rem;
+
+  &::after {
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0.4rem 0.35rem 0 0.35rem;
+    border-color: currentColor transparent transparent transparent;
+    @include media.breakpoint(small-tablet) {
+      border-width: 0.6rem 0.45rem 0 0.45rem;
+    }
+  }
+}
+
+.page-header__language-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  padding-top: 3rem;
+  z-index: 50;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s, visibility 0s linear 0.4s;
+  width: max-content;
+}
+
+.page-header__language-dropdown-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1.2rem;
+  border-radius: 10rem;
+  background: #e7e7e9;
+}
+
+.page-header__language-dropdown-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 1.4rem;
+  border-radius: 10rem;
+  background: white;
+  transition: background-color 0.2s, color 0.2s;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.8rem;
+  letter-spacing: -0.028rem;
+  color: #24292f;
+  &:link,
+  &:visited {
+    color: #24292f;
+  }
+
+  &.active {
+    background-color: #24292f;
+    color: white;
+  }
+}
+
+.page-header__language-dropdown-link-mark {
+  flex-shrink: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: 1px solid #c3c7cc;
+  background: white;
+
+  &::before {
+    content: "";
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: opacity 0.2s;
+    opacity: 0;
+  }
+
+  .page-header__language-dropdown-link.active & {
+    background-color: #766b2c;
+    border-color: #766b2c;
+    &::before {
+      opacity: 1;
+    }
   }
 }
