@@ -25,8 +25,10 @@ import contacts from "./contacts";
 import history from "./history";
 import restaurants from "./restaurants";
 import cookies from "./cookies";
+import smoothScrolling from "./smoothScrolling";
 
 document.addEventListener("DOMContentLoaded", () => {
+  smoothScrolling();
   menu();
   infrastructure();
   special();
