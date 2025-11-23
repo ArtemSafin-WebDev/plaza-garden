@@ -4,6 +4,8 @@
 @use "text";
 @use "page-footer";
 @use "page-header";
+
+// Components
 @use "components/btn";
 @use "components/menu";
 @use "components/room-card";
@@ -11,6 +13,9 @@
 @use "components/restaurant-card";
 @use "components/booking-form";
 @use "components/document-card";
+@use "components/bonus-modal";
+
+// Sections
 @use "sections/infrastructure";
 @use "sections/faq";
 @use "sections/special";
