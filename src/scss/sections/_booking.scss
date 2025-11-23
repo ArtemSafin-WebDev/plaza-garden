@@ -1,0 +1,86 @@
+@use "../utils";
+@use "../media";
+
+.booking {
+  @include utils.blockWrapper;
+  padding-top: 16rem;
+  margin-bottom: 16rem;
+
+  @include media.breakpoint(laptop) {
+    padding-top: 13rem;
+    margin-bottom: 12rem;
+  }
+  @include media.breakpoint(small-tablet) {
+    margin-bottom: 10rem;
+    padding-top: 11.4rem;
+  }
+  @include media.breakpoint(mobile) {
+    margin-bottom: 5.2rem;
+    padding-top: 10.4rem;
+  }
+}
+
+.booking__content {
+  @include utils.blockContent;
+  display: flex;
+  flex-direction: column;
+}
+
+.booking__heading {
+  margin-bottom: 5rem;
+  text-align: center;
+  @include media.breakpoint(small-tablet) {
+    margin-bottom: 4rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    margin-bottom: 3rem;
+  }
+}
+
+.booking__message {
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.14rem;
+  text-transform: uppercase;
+  color: white;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 1rem 0;
+
+  a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+    transition: text-decoration-color 0.2s;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        text-decoration-color: transparent;
+      }
+    }
+  }
+  @include media.breakpoint(mobile) {
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+  }
+
+  &::before {
+    content: "";
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    background-color: var(--primary-color);
+  }
+}

@@ -15,6 +15,7 @@ import document from "./pages-data/document";
 import wedding from "./pages-data/wedding";
 import contacts from "./pages-data/contacts";
 import notFound from "./pages-data/notFound";
+import booking from "./pages-data/booking";
 
 const pagesConfig = {
   ...home,
@@ -34,6 +35,7 @@ const pagesConfig = {
   ...wedding,
   ...contacts,
   ...notFound,
+  ...booking,
 };
 
 export default pagesConfig;
