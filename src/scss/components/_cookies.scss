@@ -1,0 +1,92 @@
+@use "../utils";
+@use "../media";
+
+.cookies {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  @include utils.blockWrapper;
+  z-index: 120;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s, visibility 0s linear 0.4s;
+
+  &.shown {
+    opacity: 1;
+    visibility: inherit;
+    transition: opacity 0.4s, visibility 0.4s;
+  }
+}
+
+.cookies__card {
+  @include utils.blockContent;
+  width: 60.5rem;
+  max-width: 100%;
+  padding: 2rem;
+  border-radius: 1rem;
+  background: white;
+  color: var(--dark-text);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+  align-self: flex-end;
+  justify-self: flex-start;
+  gap: 1rem;
+
+  @include media.breakpoint(laptop) {
+    width: 40rem;
+    margin-bottom: 4rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    width: auto;
+    margin-bottom: 4.8rem;
+    max-width: none;
+    justify-self: stretch;
+  }
+
+  @include media.breakpoint(mobile) {
+    margin-bottom: 1.2rem;
+  }
+}
+
+.cookies__card-text {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.2rem;
+  letter-spacing: -0.032rem;
+  @include media.breakpoint(laptop) {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.024rem;
+  }
+}
+
+.cookies__card-accept {
+  text-align: left;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.2rem;
+  letter-spacing: 0.16rem;
+  text-transform: uppercase;
+  color: #766b2c;
+  @include media.breakpoint(laptop) {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 1.6rem;
+    letter-spacing: 0.12rem;
+    text-transform: uppercase;
+  }
+}

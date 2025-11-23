@@ -24,6 +24,7 @@ import formats from "./formats";
 import contacts from "./contacts";
 import history from "./history";
 import restaurants from "./restaurants";
+import cookies from "./cookies";
 
 document.addEventListener("DOMContentLoaded", () => {
   menu();
@@ -50,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
   contacts();
   history();
   restaurants();
+  cookies();
 });
 
 window.addEventListener("load", () => {
