@@ -25,20 +25,32 @@
 
 .other-rooms__heading {
   margin-bottom: 4rem;
-  text-indent: 30rem;
+
   b {
     color: #4e1c54;
     font-weight: inherit;
   }
 
+  span {
+    padding-left: 30rem;
+    @include media.breakpoint(laptop) {
+      padding-left: 24rem;
+    }
+    @include media.breakpoint(small-tablet) {
+      padding-left: 13rem;
+    }
+    @include media.breakpoint(mobile) {
+      padding-left: 0;
+    }
+  }
+
   @include media.breakpoint(laptop) {
     margin-bottom: 2rem;
-    text-indent: 24rem;
   }
 
   @include media.breakpoint(small-tablet) {
     margin-bottom: 3rem;
-    text-indent: 13rem;
+
     b {
       color: var(--primary-color);
     }
@@ -46,7 +58,6 @@
 
   @include media.breakpoint(mobile) {
     margin-bottom: 2.4rem;
-    text-indent: 0;
 
     b {
       color: #4e1c54;

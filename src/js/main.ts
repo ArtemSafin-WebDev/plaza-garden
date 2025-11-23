@@ -26,6 +26,7 @@ import history from "./history";
 import restaurants from "./restaurants";
 import cookies from "./cookies";
 import smoothScrolling from "./smoothScrolling";
+import animatedHeading from "./animatedHeading";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
@@ -54,6 +55,10 @@ document.addEventListener("DOMContentLoaded", () => {
   history();
   restaurants();
   cookies();
+});
+
+document.fonts.ready.then(() => {
+  animatedHeading();
 });
 
 window.addEventListener("load", () => {

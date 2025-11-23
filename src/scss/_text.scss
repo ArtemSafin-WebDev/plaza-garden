@@ -9,6 +9,10 @@
   letter-spacing: -0.98rem;
   font-family: var(--tt-ramillas);
 
+  .word {
+    padding-right: 0.03em;
+  }
+
   @include media.breakpoint(laptop) {
     font-size: 11rem;
     font-style: normal;

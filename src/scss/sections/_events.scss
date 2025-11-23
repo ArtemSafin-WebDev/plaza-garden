@@ -67,12 +67,11 @@
   margin-top: 2rem;
   align-self: center;
   color: #4e1c54;
-  display: flex;
-  flex-direction: column;
+  display: block;
   text-align: left;
 
   span {
-    &:nth-child(2) {
+    &:nth-of-type(2) {
       padding-left: 2.83em;
       color: var(--dark-text);
       @include media.breakpoint(mobile) {

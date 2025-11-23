@@ -56,10 +56,13 @@
 }
 
 .living__heading {
-  text-indent: 2.1em;
-  @include media.breakpoint(mobile) {
-    text-indent: 0;
+  span {
+    padding-left: 2.1em;
+    @include media.breakpoint(mobile) {
+      padding-left: 0;
+    }
   }
+
   b {
     font-weight: inherit;
     color: var(--primary-color);

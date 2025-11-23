@@ -50,19 +50,23 @@
 }
 
 .special__heading {
-  text-indent: 30rem;
+  text-wrap: balance;
 
-  @include media.breakpoint(laptop) {
-    text-indent: 24rem;
+  span {
+    padding-left: 30rem;
+    @include media.breakpoint(laptop) {
+      padding-left: 24rem;
+    }
+
+    @include media.breakpoint(small-tablet) {
+      padding-left: 13rem;
+    }
+    @include media.breakpoint(mobile) {
+      padding-left: 0;
+    }
   }
-
-  @include media.breakpoint(small-tablet) {
-    text-indent: 13rem;
-  }
-
   @include media.breakpoint(mobile) {
     margin-bottom: 2rem;
-    text-indent: 0;
   }
 
   b {
