@@ -44,6 +44,8 @@
   grid-row: 1 / 2;
   aspect-ratio: 1920 / 1264;
   position: relative;
+  overflow: hidden;
+  overflow: clip;
 
   @include media.breakpoint(laptop) {
     aspect-ratio: 1366 / 900;
@@ -86,10 +88,13 @@
 .wtc__bg-image {
   position: absolute;
   left: 0;
-  top: 0;
+  bottom: 0;
   width: 100%;
-  height: 100%;
+  height: 110%;
   object-fit: cover;
+  @include media.breakpoint(small-tablet) {
+    height: 100%;
+  }
 }
 
 .wtc__card {

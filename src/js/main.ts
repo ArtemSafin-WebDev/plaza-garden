@@ -27,6 +27,10 @@ import restaurants from "./restaurants";
 import cookies from "./cookies";
 import smoothScrolling from "./smoothScrolling";
 import animatedHeading from "./animatedHeading";
+import introParallax from "./introParallax";
+import bgParallax from "./bgParallax";
+import fadeReveal from "./fadeReveal";
+import instantFadeReveal from "./instantFadeReveal";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
@@ -55,6 +59,10 @@ document.addEventListener("DOMContentLoaded", () => {
   history();
   restaurants();
   cookies();
+  introParallax();
+  bgParallax();
+  fadeReveal();
+  instantFadeReveal();
 });
 
 document.fonts.ready.then(() => {

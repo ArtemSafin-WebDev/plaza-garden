@@ -136,6 +136,8 @@
   left: 50%;
   transform: translateX(-50%);
   aspect-ratio: 1920 / 1080;
+  overflow: hidden;
+  overflow: clip;
   &::after {
     content: "";
     position: absolute;
@@ -159,10 +161,13 @@
 .in-room__tour-image {
   position: absolute;
   left: 0;
-  top: 0;
+  bottom: 0;
   width: 100%;
-  height: 100%;
+  height: 110%;
   object-fit: cover;
+  @include media.breakpoint(small-tablet) {
+    height: 100%;
+  }
 }
 
 .in-room__tour-btn {

@@ -21,6 +21,8 @@
   grid-row: 1 / 2;
   aspect-ratio: 1920 / 1649;
   position: relative;
+  overflow: hidden;
+  overflow: clip;
   &::after {
     content: "";
     position: absolute;

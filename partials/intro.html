@@ -1,10 +1,10 @@
-<section class="intro">
+<section class="intro js-intro-parallax">
     <div class="intro__bg">
         <picture>
             <source srcset="/images/intro/mobile.webp" media="(max-width: 576px)">
             <source srcset="/images/intro/tablet.webp" media="(max-width: 1024px)">
             <source srcset="/images/intro/laptop.webp" media="(max-width: 1500px)">
-            <img src="/images/intro/desktop.webp" alt="" class="intro__bg-image">
+            <img src="/images/intro/desktop.webp" alt="" class="intro__bg-image js-intro-parallax-image">
         </picture>
         <span class="intro__bg-mobile-gradient-one">
 
@@ -59,7 +59,7 @@
             <div class="intro__form">
                 {{> booking-form }}
             </div>
-            <a href="#" class="intro__video">
+            <a href="#video-modal" class="intro__video">
                 <img src="/images/intro-video.webp" alt="" class="intro__video-preview">
                 <svg width="12" height="12" aria-hidden="true">
                     <use xlink:href="#play"></use>
