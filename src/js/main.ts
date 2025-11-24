@@ -15,7 +15,6 @@ import otherRestaurants from "./other-restaurants";
 import restaurantGallery from "./restaurant-gallery";
 import otherSpecial from "./other-special";
 import selects from "./selects";
-import forms from "./forms";
 import otherHalls from "./other-halls";
 import hallAdvantages from "./hall-advantages";
 import features from "./features";
@@ -34,6 +33,7 @@ import instantFadeReveal from "./instantFadeReveal";
 import loader from "./loader";
 import delay from "./utils/delay";
 import promisifyWindowLoad from "./utils/promisifyWindowLoadEvent";
+import validation from "./validation";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
@@ -52,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
   restaurantGallery();
   otherSpecial();
   selects();
-  forms();
   otherHalls();
   hallAdvantages();
   features();
@@ -66,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
   bgParallax();
   fadeReveal();
   instantFadeReveal();
+  validation();
 
   setTimeout(() => {
     Promise.race([delay(4000), promisifyWindowLoad()])
