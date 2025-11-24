@@ -31,6 +31,9 @@ import introParallax from "./introParallax";
 import bgParallax from "./bgParallax";
 import fadeReveal from "./fadeReveal";
 import instantFadeReveal from "./instantFadeReveal";
+import loader from "./loader";
+import delay from "./utils/delay";
+import promisifyWindowLoad from "./utils/promisifyWindowLoadEvent";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
@@ -63,6 +66,18 @@ document.addEventListener("DOMContentLoaded", () => {
   bgParallax();
   fadeReveal();
   instantFadeReveal();
+
+  setTimeout(() => {
+    Promise.race([delay(4000), promisifyWindowLoad()])
+      .then(() => {
+        loader();
+      })
+      .catch((err) => {
+        const loader = document.querySelector<HTMLElement>(".loader");
+        loader?.remove();
+        console.error(err);
+      });
+  }, 200);
 });
 
 document.fonts.ready.then(() => {
