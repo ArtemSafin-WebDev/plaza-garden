@@ -16,6 +16,7 @@
         fill: none;
     }
 
+
     .loader__logo {
         width: 164px;
         height: auto;
@@ -33,6 +34,10 @@
         inset: 0;
     }
 
+    .loader__pattern svg path {
+        opacity: 0;
+    }
+
     .loader__pattern svg {
         position: absolute;
         left: 0;
@@ -42,15 +47,34 @@
         object-fit: cover;
     }
 
+
     .loader__pattern svg:nth-child(2) {
+        display: none;
+    }
+
+    .loader__pattern svg:nth-child(3) {
         display: none;
     }
 
     body:has(.loader) {
         touch-action: none;
-        -webkit-overflow-scrolling: none;
+        -webkit-overflow-scrolling: auto;
         overflow: hidden;
         overscroll-behavior: none;
+    }
+
+    @media only screen and (max-width: 1024px) {
+        .loader__pattern svg:nth-child(1) {
+            display: none;
+        }
+
+        .loader__pattern svg:nth-child(2) {
+            display: block;
+        }
+
+        .loader__pattern svg:nth-child(3) {
+            display: none;
+        }
     }
 
     @media only screen and (max-width: 576px) {
@@ -59,6 +83,10 @@
         }
 
         .loader__pattern svg:nth-child(2) {
+            display: none;
+        }
+
+        .loader__pattern svg:nth-child(3) {
             display: block;
         }
     }

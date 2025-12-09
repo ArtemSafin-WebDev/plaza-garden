@@ -5,6 +5,7 @@
   @include utils.blockWrapper;
   margin-bottom: 4rem;
   padding-top: 13rem;
+ 
 
   @include media.breakpoint(laptop) {
     padding-top: 12.4rem;
@@ -52,6 +53,7 @@
       }
     }
   }
+
   @include media.breakpoint(laptop) {
     font-size: 1.2rem;
     font-style: normal;
@@ -146,6 +148,7 @@
   border-radius: 10rem;
   transition: background-color 0.2s, color 0.2s;
   display: block;
+
   &:link,
   &:visited {
     color: var(--grey-text);
