@@ -108,7 +108,7 @@
     @include utils.noScrollbar;
     width: auto;
     margin: 0 calc(-1 * var(--content-padding));
-    padding: 0 var(--content-padding);
+
   }
 }
 
@@ -117,7 +117,7 @@
   width: 100vw;
   left: 50%;
   transform: translateX(-50%);
-  position: relative;
+
 
   @include media.breakpoint(small-tablet) {
     transform: none;
@@ -129,6 +129,10 @@
   @include media.breakpoint(mobile) {
     width: max-content;
     flex-shrink: 0;
+    overflow: hidden;
+    overflow: clip;
+    overflow-clip-margin: var(--content-padding);
+    margin: 0 var(--content-padding);
   }
 }
 
@@ -143,9 +147,7 @@
   pointer-events: none;
   animation: clouds 70s infinite linear;
 
-  @include media.breakpoint(mobile) {
-    display: none;
-  }
+
 }
 
 @keyframes clouds {
