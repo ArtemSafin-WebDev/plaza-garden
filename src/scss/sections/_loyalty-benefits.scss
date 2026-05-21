@@ -1,0 +1,301 @@
+@use "../utils";
+@use "../media";
+
+.loyalty-benefits {
+  @include utils.blockWrapper;
+  margin-bottom: 16rem;
+  overflow: hidden;
+  overflow: clip;
+
+  @include media.breakpoint(laptop) {
+    margin-bottom: 12rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    margin-bottom: 10rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    margin-bottom: 6rem;
+    overflow: visible;
+  }
+}
+
+.loyalty-benefits__content {
+  @include utils.blockContent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loyalty-benefits__intro {
+  max-width: 153.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  text-align: center;
+
+  @include media.breakpoint(laptop) {
+    max-width: 110.8rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    max-width: none;
+  }
+}
+
+.loyalty-benefits__pattern {
+  width: 12rem;
+
+  @include media.breakpoint(laptop) {
+    width: 6rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    width: 4rem;
+  }
+}
+
+.loyalty-benefits__text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.loyalty-benefits__heading {
+  text-wrap: balance;
+}
+
+.loyalty-benefits__text {
+  color: var(--grey-text);
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.8rem;
+  letter-spacing: -0.04rem;
+
+  @include media.breakpoint(laptop) {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    letter-spacing: -0.032rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    font-size: 1.4rem;
+    line-height: normal;
+    letter-spacing: -0.028rem;
+  }
+}
+
+.loyalty-benefits__links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  @include media.breakpoint(mobile) {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+.loyalty-benefits__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4.2rem;
+  padding: 1.2rem 1.4rem;
+  border-radius: 10rem;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.8rem;
+  letter-spacing: -0.032rem;
+  white-space: nowrap;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+
+  @include media.breakpoint(laptop) {
+    min-height: 3.2rem;
+    padding: 0.8rem 1rem;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    letter-spacing: -0.028rem;
+  }
+
+  &--filled {
+    background-color: var(--primary-color);
+    color: white;
+
+    &:link,
+    &:visited {
+      color: white;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: var(--primary-color-hover);
+      }
+    }
+  }
+
+  &--outline {
+    border: 1.3px solid var(--dark-text);
+    color: var(--dark-text);
+
+    &:link,
+    &:visited {
+      color: var(--dark-text);
+    }
+
+    @include media.breakpoint(laptop) {
+      border-width: 1px;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: var(--dark-text);
+        color: white;
+      }
+    }
+  }
+}
+
+.loyalty-benefits__slider {
+  width: 100%;
+  margin-top: 14rem;
+
+  .swiper {
+    width: 100%;
+    overflow: visible;
+  }
+
+  .swiper-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.2rem;
+  }
+
+  .swiper-slide {
+    display: flex;
+    height: auto;
+    min-width: 0;
+  }
+
+  @include media.breakpoint(laptop) {
+    margin-top: 4.6rem;
+
+    .swiper-wrapper {
+      gap: 1rem;
+    }
+  }
+
+  @include media.breakpoint(small-tablet) {
+    margin-top: 5.3rem;
+
+    .swiper-wrapper {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @include media.breakpoint(mobile) {
+    margin-top: 5.3rem;
+
+    .swiper-wrapper {
+      display: flex;
+      gap: 0;
+    }
+
+    .swiper-slide {
+      width: 25rem;
+      flex-shrink: 0;
+    }
+  }
+}
+
+.loyalty-benefits__card {
+  box-sizing: border-box;
+  width: 100%;
+  height: 20rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0;
+  border-radius: 1rem;
+  background-color: white;
+  backdrop-filter: blur(15px);
+
+  @include media.breakpoint(laptop) {
+    height: 17rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    height: 19rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    height: 20rem;
+  }
+}
+
+.loyalty-benefits__card-text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.loyalty-benefits__card-title {
+  color: var(--dark-text);
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.4rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+
+  @include media.breakpoint(laptop) {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    letter-spacing: 0.14rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    letter-spacing: 0.12rem;
+  }
+}
+
+.loyalty-benefits__card-text {
+  color: var(--grey-text);
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.2rem;
+  letter-spacing: -0.032rem;
+
+  @include media.breakpoint(laptop) {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    letter-spacing: -0.028rem;
+  }
+
+  @include media.breakpoint(mobile) {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    letter-spacing: -0.024rem;
+  }
+}
+
+.loyalty-benefits__card-icon {
+  width: 4.8rem;
+  height: 4.8rem;
+  object-fit: contain;
+
+  @include media.breakpoint(laptop) {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+}

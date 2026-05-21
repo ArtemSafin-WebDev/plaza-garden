@@ -16,6 +16,7 @@ import wedding from "./pages-data/wedding";
 import contacts from "./pages-data/contacts";
 import notFound from "./pages-data/notFound";
 import booking from "./pages-data/booking";
+import loyalty from "./pages-data/loyalty";
 
 const pagesConfig = {
   ...home,
@@ -36,6 +37,7 @@ const pagesConfig = {
   ...contacts,
   ...notFound,
   ...booking,
+  ...loyalty,
 };
 
 export default pagesConfig;
