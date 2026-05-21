@@ -11,7 +11,7 @@
 
   @include media.breakpoint(laptop) {
     height: 76.8rem;
-    margin-bottom: 12rem;
+    margin-bottom: 11rem;
   }
 
   @include media.breakpoint(small-tablet) {
@@ -22,7 +22,7 @@
   @include media.breakpoint(mobile) {
     grid-template-columns: minmax(0, 1fr);
     height: auto;
-    margin-bottom: 8rem;
+    margin-bottom: 7.2rem;
   }
 }
 

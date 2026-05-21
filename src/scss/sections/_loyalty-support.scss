@@ -8,6 +8,7 @@
   justify-content: center;
   overflow: hidden;
   overflow: clip;
+  margin-bottom: 7rem;
   color: white;
 
   &::after {
@@ -19,12 +20,18 @@
     pointer-events: none;
   }
 
+  @include media.breakpoint(laptop) {
+    margin-bottom: 4rem;
+  }
+
   @include media.breakpoint(small-tablet) {
     min-height: 43.2rem;
+    margin-bottom: 0;
   }
 
   @include media.breakpoint(mobile) {
     min-height: 60rem;
+    margin-bottom: 1rem;
   }
 }
 

@@ -15,11 +15,11 @@
 
   @include media.breakpoint(small-tablet) {
     padding-top: 9.4rem;
-    margin-bottom: 10rem;
+    margin-bottom: 9rem;
   }
 
   @include media.breakpoint(mobile) {
-    margin-bottom: 5.2rem;
+    margin-bottom: 7.2rem;
   }
 }
 

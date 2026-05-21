@@ -3,7 +3,7 @@
 
 .loyalty-statuses {
   @include utils.blockWrapper;
-  margin-bottom: 16rem;
+  margin-bottom: 0;
   padding-top: 10rem;
   padding-bottom: 4rem;
   overflow: hidden;
@@ -13,15 +13,15 @@
   color: white;
 
   @include media.breakpoint(laptop) {
-    margin-bottom: 12rem;
+    margin-bottom: 0;
   }
 
   @include media.breakpoint(small-tablet) {
-    margin-bottom: 10rem;
+    margin-bottom: 0;
   }
 
   @include media.breakpoint(mobile) {
-    margin-bottom: 8rem;
+    margin-bottom: 0;
     padding-top: 6rem;
     overflow: hidden;
   }

@@ -12,11 +12,11 @@
   }
 
   @include media.breakpoint(small-tablet) {
-    margin-bottom: 10rem;
+    margin-bottom: 9rem;
   }
 
   @include media.breakpoint(mobile) {
-    margin-bottom: 6rem;
+    margin-bottom: 7.2rem;
     overflow: visible;
   }
 }

@@ -142,8 +142,17 @@
 }
 
 .faq--loyalty-rules {
+  @include media.breakpoint(laptop) {
+    margin-bottom: 11rem;
+  }
+
+  @include media.breakpoint(small-tablet) {
+    margin-bottom: 5.8rem;
+  }
+
   @include media.breakpoint(mobile) {
     display: grid;
+    margin-bottom: 7.2rem;
   }
 
   .faq__heading {
