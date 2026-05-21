@@ -1,0 +1,176 @@
+<section class="profile">
+    <div class="profile__content">
+        <div class="profile__breadcrumbs">
+            <a href="/">Главная</a>
+            <span>/</span>
+            <a href="#" class="active">Профиль</a>
+        </div>
+
+        <h1 class="profile__heading h1">Профиль</h1>
+
+        <div class="profile__dashboard">
+            <div class="profile__member-area">
+                <article class="profile-member">
+                    <div class="profile-member__top">
+                        <div class="profile-member__head">
+                            <img src="/images/profile/cmt-bonus.svg" alt="ЦМТ bonus" class="profile-member__logo">
+                            <span class="profile-member__level">Silver</span>
+                        </div>
+                        <p class="profile-member__slogan">Копить быстро,<br> тратить легко!</p>
+                    </div>
+
+                    <div class="profile-member__bottom">
+                        <div class="profile-member__qr">
+                            <img src="/images/profile/qr.svg" alt="" class="profile-member__qr-image">
+                        </div>
+                        <div class="profile-member__details">
+                            <p class="profile-member__name">Иванов Иван</p>
+                            <p class="profile-member__phone">79 152 831 409</p>
+                            <p class="profile-member__label">Баллы</p>
+                            <p class="profile-member__points">10 800</p>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="profile-actions">
+                    <a href="#" class="profile-actions__link profile-actions__link--primary">
+                        <img src="/images/profile/bonus-shop.svg" alt="" class="profile-actions__icon">
+                        <span>Бонусный магазин</span>
+                    </a>
+                    <a href="#" class="profile-actions__link">Как еще потратить бонусы?</a>
+                    <a href="#" class="profile-actions__link">Где еще копить бонусы?</a>
+                    <a href="/loyalty.html" class="profile-actions__link profile-actions__link--plain">О программе лояльности</a>
+                </div>
+            </div>
+
+            <article class="profile-card profile-card--progress" style="--profile-progress: 1.4%;">
+                <div class="profile-card__head">
+                    <h2 class="profile-card__title">Уровень участника</h2>
+                    <p class="profile-card__date">до 08.05.2027</p>
+                </div>
+                <div class="profile-progress">
+                    <p class="profile-progress__text">
+                        До уровня <span>GOLD</span> осталось потратить <strong>100 000 ₽</strong>
+                    </p>
+                    <div class="profile-progress__bar" aria-hidden="true">
+                        <span></span>
+                    </div>
+                    <div class="profile-progress__limits">
+                        <span>0 ₽</span>
+                        <span>100 000 ₽</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="profile-card profile-card--balance">
+                <div class="profile-card__head">
+                    <h2 class="profile-card__title">Бонусный баланс</h2>
+                    <span class="profile-card__icon">
+                        <img src="/images/profile/bonus-balance.svg" alt="">
+                    </span>
+                </div>
+                <div class="profile-balance">
+                    <p><span>10 800</span> баллов</p>
+                    <small>≈ 10 800 ₽ к оплате</small>
+                </div>
+            </article>
+
+            <article class="profile-card profile-card--history">
+                <div class="profile-card__head">
+                    <h2 class="profile-card__title">История операций</h2>
+                    <span class="profile-card__icon">
+                        <img src="/images/profile/history.svg" alt="">
+                    </span>
+                </div>
+                <ul class="profile-history">
+                    <li class="profile-history__item profile-history__item--plus">
+                        <time datetime="2027-05-08">08.05.2027</time>
+                        <span class="profile-history__type">
+                            <img src="/images/profile/accrual.svg" alt="">
+                            Начисление
+                        </span>
+                        <span class="profile-history__name">Приветственные бонусы</span>
+                        <span class="profile-history__amount">+ 500</span>
+                    </li>
+                    <li class="profile-history__item profile-history__item--plus">
+                        <time datetime="2026-05-02">02.05.2026</time>
+                        <span class="profile-history__type">
+                            <img src="/images/profile/accrual.svg" alt="">
+                            Начисление
+                        </span>
+                        <span class="profile-history__name">Ресторан Plaza Garden</span>
+                        <span class="profile-history__amount">+ 500</span>
+                    </li>
+                    <li class="profile-history__item profile-history__item--minus">
+                        <time datetime="2026-04-28">28.04.2026</time>
+                        <span class="profile-history__type">
+                            <img src="/images/profile/write-off.svg" alt="">
+                            Списание
+                        </span>
+                        <span class="profile-history__name">Бонусный магазин — SPA-процедура</span>
+                        <span class="profile-history__amount">– 800</span>
+                    </li>
+                    <li class="profile-history__item profile-history__item--plus">
+                        <time datetime="2026-04-15">15.04.2026</time>
+                        <span class="profile-history__type">
+                            <img src="/images/profile/accrual.svg" alt="">
+                            Начисление
+                        </span>
+                        <span class="profile-history__name">Конференц-зал — аренда зала</span>
+                        <span class="profile-history__amount">+ 500</span>
+                    </li>
+                </ul>
+            </article>
+
+            <div class="profile__info">
+                <article class="profile-card profile-card--rules">
+                    <h2 class="profile-card__title">Правила и условия программы лояльности ПАО «ЦМТ»</h2>
+                    <a href="#" class="profile-card__button">Читать подробнее</a>
+                </article>
+
+                <article class="profile-card profile-card--support">
+                    <h2 class="profile-card__title">Служба поддержки</h2>
+                    <div class="profile-support">
+                        <a href="tel:+74952582122" class="profile-support__item">
+                            <b>+7 (495) 258-21-22</b>
+                            <span>телефон</span>
+                        </a>
+                        <a href="mailto:plazareservations@plazagarden.ru" class="profile-support__item">
+                            <b>plazareservations@plazagarden.ru</b>
+                            <span>почта</span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <section class="profile-banner">
+                <div class="profile-banner__swiper swiper">
+                    <div class="swiper-wrapper">
+                        <div class="profile-banner__slide swiper-slide">
+                            <div class="profile-banner__inner">
+                                <h2 class="profile-banner__title">Заголовок рекламного баннера</h2>
+                                <p class="profile-banner__text">Описание</p>
+                                <a href="#" class="profile-banner__link">Читать подробнее</a>
+                            </div>
+                        </div>
+                        <div class="profile-banner__slide swiper-slide">
+                            <div class="profile-banner__inner">
+                                <h2 class="profile-banner__title">Заголовок рекламного баннера</h2>
+                                <p class="profile-banner__text">Описание</p>
+                                <a href="#" class="profile-banner__link">Читать подробнее</a>
+                            </div>
+                        </div>
+                        <div class="profile-banner__slide swiper-slide">
+                            <div class="profile-banner__inner">
+                                <h2 class="profile-banner__title">Заголовок рекламного баннера</h2>
+                                <p class="profile-banner__text">Описание</p>
+                                <a href="#" class="profile-banner__link">Читать подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-banner__pagination"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>

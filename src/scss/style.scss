@@ -14,6 +14,7 @@
 @use "components/booking-form";
 @use "components/document-card";
 @use "components/bonus-modal";
+@use "components/loyalty-earn-modal";
 @use "components/cookies";
 @use "components/video-modal";
 
@@ -64,3 +65,4 @@
 @use "sections/loyalty-statuses";
 @use "sections/loyalty-actions";
 @use "sections/loyalty-support";
+@use "sections/profile";

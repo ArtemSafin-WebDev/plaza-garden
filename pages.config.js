@@ -17,6 +17,7 @@ import contacts from "./pages-data/contacts";
 import notFound from "./pages-data/notFound";
 import booking from "./pages-data/booking";
 import loyalty from "./pages-data/loyalty";
+import profile from "./pages-data/profile";
 
 const pagesConfig = {
   ...home,
@@ -38,6 +39,7 @@ const pagesConfig = {
   ...notFound,
   ...booking,
   ...loyalty,
+  ...profile,
 };
 
 export default pagesConfig;

@@ -35,6 +35,7 @@ import delay from "./utils/delay";
 import promisifyWindowLoad from "./utils/promisifyWindowLoadEvent";
 import validation from "./validation";
 import loyaltyBenefits from "./loyalty-benefits";
+import profile from "./profile";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
@@ -68,6 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
   instantFadeReveal();
   validation();
   loyaltyBenefits();
+  profile();
 
   setTimeout(() => {
     Promise.race([delay(4000), promisifyWindowLoad()])
