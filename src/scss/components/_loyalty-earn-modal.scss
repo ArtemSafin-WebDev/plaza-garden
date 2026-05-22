@@ -21,6 +21,11 @@
     transition: opacity 0.4s, visibility 0.4s;
   }
 
+  .lenis &[data-lenis-prevent] {
+    overscroll-behavior: none;
+    overscroll-behavior-y: none;
+  }
+
   @include media.breakpoint(laptop) {
     padding-top: 2rem;
     padding-bottom: 2rem;

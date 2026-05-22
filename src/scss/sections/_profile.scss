@@ -54,6 +54,20 @@
     cursor: default;
   }
 
+  a:not(.active) {
+    transition: color 0.2s;
+
+    &:focus-visible {
+      color: white;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
   @include media.breakpoint(laptop) {
     margin-bottom: 3.9rem;
     font-size: 1.2rem;
@@ -245,8 +259,7 @@
 }
 
 .profile-actions__link,
-.profile-card__button,
-.profile-banner__link {
+.profile-card__button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -309,6 +322,9 @@
 .profile-actions__icon {
   width: 1.4rem;
   height: 1.4rem;
+  flex-shrink: 0;
+  background-color: currentColor;
+  mask: url("../images/profile/bonus-shop.svg") center / contain no-repeat;
 }
 
 .profile-actions__link--plain {
@@ -389,11 +405,25 @@
   border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 1rem;
   background-color: rgba(255, 255, 255, 0.11);
+  color: var(--profile-warm);
 
-  img {
+  &::before {
+    content: "";
     width: 2rem;
     height: 2rem;
+    background-color: currentColor;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
   }
+}
+
+.profile-card__icon--balance::before {
+  mask-image: url("../images/profile/bonus-balance.svg");
+}
+
+.profile-card__icon--history::before {
+  mask-image: url("../images/profile/history.svg");
 }
 
 .profile-progress {
@@ -505,7 +535,7 @@
 .profile-history__type {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1rem;
   min-height: 2.7rem;
   padding: 0.4rem 1rem 0.5rem;
@@ -514,19 +544,32 @@
   line-height: 1.8rem;
   letter-spacing: 0;
 
-  img {
+  i {
     width: 1rem;
     height: 1rem;
+    flex-shrink: 0;
+    background-color: currentColor;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
   }
 
   .profile-history__item--plus & {
     background-color: rgba(106, 155, 112, 0.05);
     color: #6a9b70;
+
+    i {
+      mask-image: url("../images/profile/accrual.svg");
+    }
   }
 
   .profile-history__item--minus & {
     background-color: rgba(155, 109, 109, 0.05);
     color: #9b6d6d;
+
+    i {
+      mask-image: url("../images/profile/write-off.svg");
+    }
   }
 }
 
@@ -659,7 +702,35 @@
 }
 
 .profile-banner__link {
-  min-height: 4.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  max-width: 100%;
+  padding: 1.2rem 1rem;
+  border: 1px solid var(--profile-muted);
+  border-radius: 10rem;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.6rem;
+  letter-spacing: -0.028rem;
+  text-align: center;
+  white-space: nowrap;
+  transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+
+  &:link,
+  &:visited {
+    color: white;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      border-color: white;
+      background-color: white;
+      color: var(--dark-text);
+    }
+  }
 }
 
 .profile-banner__pagination {
@@ -686,10 +757,6 @@
 }
 
 @include media.breakpoint(laptop) {
-  .profile-member__bottom {
-    align-items: center;
-  }
-
   .profile-history__item {
     grid-template-columns: 7rem 11.2rem minmax(0, 1fr) 5rem;
   }
