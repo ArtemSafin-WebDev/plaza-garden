@@ -259,7 +259,7 @@
 
   @include media.breakpoint(mobile) {
     height: 50rem;
-    margin: 0;
+    margin: 0 -1.2rem;
 
     &::before {
       content: none;
@@ -387,7 +387,11 @@
   }
 
   @include media.breakpoint(mobile) {
-    padding: 0;
+    width: calc(100% + 2.4rem);
+    margin-right: -1.2rem;
+    margin-left: -1.2rem;
+    padding: 0 1.2rem;
+    scroll-padding: 0 1.2rem;
   }
 
   li {
@@ -429,12 +433,6 @@
   border-radius: 1rem;
   background: var(--dark-text);
   color: white;
-
-  @include media.breakpoint(mobile) {
-    width: calc(100% + 2.4rem);
-    margin-right: -1.2rem;
-    margin-left: -1.2rem;
-  }
 }
 
 .loyalty-earn-modal__dark-block--excluded {
@@ -868,10 +866,6 @@
   @include media.breakpoint(small-tablet) {
     object-position: center;
   }
-
-  @include media.breakpoint(mobile) {
-    object-position: 52% center;
-  }
 }
 
 .loyalty-earn-modal__exchange-card {
@@ -957,6 +951,8 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.8rem;
+  list-style: none;
+  counter-reset: use-list;
 }
 
 .loyalty-spend-modal__info-card,
@@ -972,6 +968,7 @@
 
 .loyalty-spend-modal__info-card {
   min-height: 24.2rem;
+  counter-increment: use-list;
 }
 
 .loyalty-spend-modal__badge {
@@ -985,6 +982,10 @@
   line-height: 1.8rem;
   letter-spacing: 0.12rem;
   text-transform: uppercase;
+
+  &::before {
+    content: counter(use-list, decimal-leading-zero);
+  }
 }
 
 .loyalty-spend-modal__info-card-bottom,
@@ -1124,6 +1125,7 @@
 .loyalty-spend-modal__important-list {
   gap: 2rem;
   padding-top: 6rem;
+  counter-reset: important-list;
 
   li {
     display: grid;
@@ -1136,14 +1138,13 @@
     font-weight: 500;
     line-height: 2.2rem;
     letter-spacing: -0.032rem;
+    counter-increment: important-list;
+    align-items: center;
 
     &::before {
-      content: none;
+      color: var(--grey-text);
+      content: counter(important-list, decimal-leading-zero);
     }
-  }
-
-  span {
-    color: var(--grey-text);
   }
 
   a {
@@ -1314,6 +1315,7 @@
       font-size: 1.4rem;
       line-height: 2rem;
       letter-spacing: -0.028rem;
+      align-items: stretch;
     }
   }
 }
