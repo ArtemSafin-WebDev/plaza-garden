@@ -1,0 +1,154 @@
+<section class="loyalty-earn-modal loyalty-earn-modal--spend js-modal" id="loyalty-spend-modal" data-lenis-prevent="">
+    <div class="loyalty-earn-modal__content">
+        <button class="loyalty-earn-modal__close js-modal-close" type="button" aria-label="Закрыть модальное окно">
+            <svg width="15" height="15" viewBox="0 0 15 15" aria-hidden="true">
+                <path
+                    d="M4.3539 3.6461L7.5007 6.79289L10.6468 3.64679L11.3539 4.3539L8.20781 7.5L11.3539 10.6461L10.6468 11.3532L7.5007 8.20711L4.3539 11.3539L3.64679 10.6468L6.79358 7.5L3.64679 4.35321L4.3539 3.6461Z" />
+            </svg>
+        </button>
+        <div class="loyalty-earn-modal__inner">
+            <section class="loyalty-earn-modal__hero">
+                <div class="loyalty-earn-modal__section-head loyalty-earn-modal__section-head--hero">
+                    <p class="loyalty-earn-modal__eyebrow">ЦМТ-Бонус — расходование</p>
+                    <span class="loyalty-earn-modal__divider" aria-hidden="true"></span>
+                    <h2 class="loyalty-earn-modal__title">Как потратить бонусы?</h2>
+                    <p class="loyalty-earn-modal__lead">
+                        Баллы можно использовать для частичной оплаты услуг ЦМТ, специальных предложений и покупок в интернет-магазине программы лояльности.
+                    </p>
+                </div>
+                <div class="loyalty-earn-modal__hero-media loyalty-earn-modal__hero-media--spend">
+                    <picture>
+                        <source srcset="/images/loyalty-spend-modal/mobile.jpg" media="(max-width: 576px)">
+                        <source srcset="/images/loyalty-spend-modal/tablet.jpg" media="(max-width: 1024px)">
+                        <img src="/images/loyalty-spend-modal/desktop-and-laptop.png" alt="" class="loyalty-earn-modal__hero-image loyalty-earn-modal__hero-image--spend">
+                    </picture>
+                    <div class="loyalty-earn-modal__exchange-card">
+                        <p class="loyalty-earn-modal__exchange-label">Курс обмена</p>
+                        <div class="loyalty-earn-modal__exchange-row">
+                            <span class="loyalty-earn-modal__exchange-value">1</span>
+                            <small>балл</small>
+                            <span class="loyalty-earn-modal__exchange-equals">=</span>
+                            <span class="loyalty-earn-modal__exchange-value loyalty-earn-modal__exchange-value--accent">1₽</span>
+                            <small>скидка</small>
+                        </div>
+                        <p class="loyalty-earn-modal__exchange-text">
+                            Размер оплаты баллами зависит от статуса участника программы.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="loyalty-spend-modal__where">
+                <h3 class="loyalty-spend-modal__section-title">Где можно<br> использовать баллы</h3>
+                <ul class="loyalty-spend-modal__use-list">
+                    <li class="loyalty-spend-modal__info-card">
+                        <span class="loyalty-spend-modal__badge">01</span>
+                        <div class="loyalty-spend-modal__info-card-bottom">
+                            <h4>Услуги ЦМТ</h4>
+                            <p>Частичная оплата услуг, участвующих в программе лояльности, в момент расчёта.</p>
+                        </div>
+                    </li>
+                    <li class="loyalty-spend-modal__info-card">
+                        <span class="loyalty-spend-modal__badge">02</span>
+                        <div class="loyalty-spend-modal__info-card-bottom">
+                            <h4>Специальные<br> предложения</h4>
+                            <p>Повышенный процент оплаты баллами в рамках акций и партнёрских предложений.</p>
+                        </div>
+                    </li>
+                    <li class="loyalty-spend-modal__info-card">
+                        <span class="loyalty-spend-modal__badge">03</span>
+                        <div class="loyalty-spend-modal__info-card-bottom">
+                            <h4>Интернет-магазин<br> ЦМТ-Бонус</h4>
+                            <p>Покупка электронных сертификатов за накопленные баллы.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="loyalty-spend-modal__limits">
+                <div class="loyalty-earn-modal__section-head">
+                    <h3 class="loyalty-earn-modal__subtitle loyalty-spend-modal__limits-title">
+                        <span class="loyalty-spend-modal__limits-title-desktop">Сколько можно<br> оплатить баллами</span>
+                        <span class="loyalty-spend-modal__limits-title-mobile">Статус зависит от суммы покупок за последние 365 дней</span>
+                    </h3>
+                    <p class="loyalty-earn-modal__lead loyalty-spend-modal__limits-lead">
+                        <span class="loyalty-spend-modal__limits-lead-desktop">Процент зависит от вашего статуса в программе «ЦМТ-Бонус».</span>
+                        <span class="loyalty-spend-modal__limits-lead-mobile">Ваш статус обновляется автоматически каждые 365 дней на основании суммы всех оплаченных услуг ЦМТ за расчётный период.</span>
+                    </p>
+                </div>
+                <ul class="loyalty-earn-modal__status-list">
+                    <li class="loyalty-earn-modal__status-card loyalty-earn-modal__status-card--silver">
+                        <span class="loyalty-earn-modal__status-name">Silver</span>
+                        <span class="loyalty-earn-modal__status-percent">5%</span>
+                        <span class="loyalty-earn-modal__status-note">от суммы оплаченных услуг</span>
+                        <span class="loyalty-earn-modal__status-text">Регистрация в программе</span>
+                    </li>
+                    <li class="loyalty-earn-modal__status-card loyalty-earn-modal__status-card--gold">
+                        <span class="loyalty-earn-modal__status-name">Gold</span>
+                        <span class="loyalty-earn-modal__status-percent">8%</span>
+                        <span class="loyalty-earn-modal__status-note">от суммы оплаченных услуг</span>
+                        <span class="loyalty-earn-modal__status-text">Покупки от 100 000 ₽ за 365 дней</span>
+                    </li>
+                    <li class="loyalty-earn-modal__status-card loyalty-earn-modal__status-card--platinum">
+                        <span class="loyalty-earn-modal__status-name">Platinum</span>
+                        <span class="loyalty-earn-modal__status-percent">10%</span>
+                        <span class="loyalty-earn-modal__status-note">от суммы оплаченных услуг</span>
+                        <span class="loyalty-earn-modal__status-text">Покупки от 300 000 ₽ за 365 дней</span>
+                    </li>
+                </ul>
+                <p class="loyalty-spend-modal__note">
+                    *Cписание баллов за услуги по размещению в гостинице Plaza Garden Moscow WTC 5* и апарт-отеле "Международная" осуществляется 1 раз за период размещения.
+                </p>
+            </section>
+
+            <section class="loyalty-spend-modal__shop">
+                <article class="loyalty-spend-modal__shop-card">
+                    <p class="loyalty-spend-modal__eyebrow">интернет-магазин</p>
+                    <div class="loyalty-spend-modal__shop-card-bottom">
+                        <div class="loyalty-spend-modal__shop-text">
+                            <h3>Интернет-магазин<br> «ЦМТ-Бонус»</h3>
+                            <p>В магазине вознаграждений можно приобрести электронные сертификаты на услуги Центра международной торговли Москвы, полностью оплатив их накопленными бонусами.</p>
+                        </div>
+                        <a href="https://shop.wtcmoscow.ru/" class="btn btn--outline loyalty-spend-modal__shop-link" target="_blank" rel="noopener noreferrer">
+                            Перейти в магазин
+                            <svg width="12" height="12" aria-hidden="true">
+                                <use xlink:href="#diamond"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+                <article class="loyalty-spend-modal__shop-card">
+                    <p class="loyalty-spend-modal__eyebrow">условия</p>
+                    <ol class="loyalty-spend-modal__condition-list">
+                        <li><span>01</span>Сертификат является электронным</li>
+                        <li><span>02</span>Оплата производится полностью бонусными баллами</li>
+                        <li><span>03</span>Частичная оплата баллами и рублями не предусмотрена</li>
+                        <li><span>04</span>После покупки на email приходит письмо с уникальным кодом</li>
+                        <li><span>05</span>Код нужно указать при заказе товара или услуги</li>
+                    </ol>
+                </article>
+            </section>
+
+            <section class="loyalty-earn-modal__dark-block loyalty-spend-modal__important">
+                <div class="loyalty-earn-modal__rules-head">
+                    <h3 class="loyalty-earn-modal__dark-title">Важно знать</h3>
+                    <p class="loyalty-earn-modal__dark-text">
+                        Особые условия при использовании сертификатов и баллов.
+                    </p>
+                </div>
+                <ol class="loyalty-spend-modal__important-list">
+                    <li><span>01</span>За покупки сертификатов в интернет-магазине «ЦМТ-Бонус» баллы не начисляются.</li>
+                    <li><span>02</span>При оплате или заказе товара, или услуги (включая акционные предложения) единовременно может быть применен только один сертификат.</li>
+                    <li><span>03</span>Срок действия сертификатов ограничен.</li>
+                    <li><span>04</span>В случае неиспользования в указанный срок сертификата, приобретенного в интернет- магазине «ЦМТ-Бонус», возврат денежных средств или потраченных бонусных баллов не предусмотрен.</li>
+                    <li>
+                        <span>05</span>
+                        <p>
+                            Более подробная информация на сайте интернет-магазина&nbsp;<a href="https://shop.wtcmoscow.ru/" target="_blank" rel="noopener noreferrer">shop.wtcmoscow.ru</a>
+                        </p>
+                    </li>
+                </ol>
+            </section>
+        </div>
+    </div>
+</section>
