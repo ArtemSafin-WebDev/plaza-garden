@@ -14,7 +14,6 @@
 @use "components/booking-form";
 @use "components/document-card";
 @use "components/bonus-modal";
-@use "components/loyalty-earn-modal";
 @use "components/cookies";
 @use "components/video-modal";
 
@@ -60,10 +59,3 @@
 @use "sections/contacts";
 @use "sections/not-found";
 @use "sections/booking";
-@use "sections/loyalty-intro";
-@use "sections/loyalty-benefits";
-@use "sections/loyalty-statuses";
-@use "sections/loyalty-actions";
-@use "sections/loyalty-support";
-@use "sections/profile";
-@use "sections/profile-empty";
