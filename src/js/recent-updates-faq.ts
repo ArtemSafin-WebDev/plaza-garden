@@ -3,10 +3,14 @@ import { ScrollTrigger } from "gsap/all";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function faq() {
-  const elements = Array.from(document.querySelectorAll<HTMLElement>(".faq"));
+export default function recentUpdatesFaq() {
+  const elements = Array.from(
+    document.querySelectorAll<HTMLElement>(".js-faq")
+  );
+
   elements.forEach((element) => {
     const accordions = element.querySelectorAll<HTMLElement>(".faq__accordion");
+
     accordions.forEach((accordion) => {
       const btn = accordion.querySelector<HTMLButtonElement>(
         ".faq__accordion-btn"
@@ -17,10 +21,12 @@ export default function faq() {
 
       btn?.addEventListener("click", (event) => {
         event.preventDefault();
+
         accordions.forEach((someAccordion) => {
           if (someAccordion === accordion) return;
           someAccordion.classList.remove("active");
         });
+
         accordion.classList.toggle("active");
       });
 
