@@ -10,7 +10,32 @@ export default function promoPopup() {
     document.querySelectorAll<HTMLElement>(".promo-popup")
   );
 
-  const popupClosed = localStorage.getItem("popupClosed") === "Y";
+  function setWithExpiry(key, value, ttl) {
+    const now = new Date();
+    const item = {
+      value: value,
+      expiry: now.getTime() + ttl // ttl in milliseconds
+    };
+    localStorage.setItem(key, JSON.stringify(item));
+  }
+
+  function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key);
+
+    if (!itemStr) return null;
+
+    const item = JSON.parse(itemStr);
+    const now = new Date();
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key); // Cleanup expired data
+      return null;
+    }
+
+    return item.value;
+  }
+
+  const popupClosed = getWithExpiry("popupClosed");
 
   elements.forEach((element) => {
     if (popupClosed) {
@@ -43,7 +68,7 @@ export default function promoPopup() {
 
     closeBtn?.addEventListener("click", () => {
       element.classList.add("promo-popup--hidden");
-      localStorage.setItem("popupClosed", "Y");
+      setWithExpiry("popupClosed", "Y", 1000*60*10);//10 min
       element.addEventListener(
         "transitionend",
         () => {
