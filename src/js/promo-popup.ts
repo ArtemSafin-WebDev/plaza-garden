@@ -10,7 +10,13 @@ export default function promoPopup() {
     document.querySelectorAll<HTMLElement>(".promo-popup")
   );
 
+  const popupClosed = localStorage.getItem("popupClosed") === "Y";
+
   elements.forEach((element) => {
+    if (popupClosed) {
+      element.classList.add("promo-popup--hidden");
+    }
+
     const container = element.querySelector<HTMLElement>(".swiper");
     const pagination = element.querySelector<HTMLElement>(
       ".promo-popup__pagination"
@@ -37,6 +43,7 @@ export default function promoPopup() {
 
     closeBtn?.addEventListener("click", () => {
       element.classList.add("promo-popup--hidden");
+      localStorage.setItem("popupClosed", "Y");
       element.addEventListener(
         "transitionend",
         () => {
