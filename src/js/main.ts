@@ -24,6 +24,7 @@ import contacts from "./contacts";
 import history from "./history";
 import restaurants from "./restaurants";
 import cookies from "./cookies";
+import promoPopup from "./promo-popup";
 import smoothScrolling from "./smoothScrolling";
 import animatedHeading from "./animatedHeading";
 import introParallax from "./introParallax";
@@ -61,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
   history();
   restaurants();
   cookies();
+  promoPopup();
   introParallax();
   bgParallax();
   fadeReveal();
